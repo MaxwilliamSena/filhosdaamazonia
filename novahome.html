@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filhos do Amazonas - Preservando Nossa Floresta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 25%, #047857 50%, #059669 75%, #10b981 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        .floating-slow {
+            animation: floating 8s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(2deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(2deg);
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .neon-glow:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+        }
+        
+        .morphism {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .tree-float {
+            animation: treeFloat 10s ease-in-out infinite;
+        }
+        
+        @keyframes treeFloat {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(10px) rotate(1deg); }
+            50% { transform: translateY(-10px) translateX(-5px) rotate(-0.5deg); }
+            75% { transform: translateY(-25px) translateX(8px) rotate(0.8deg); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981, #059669, #047857);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            transition: left 0.3s ease;
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            left: 0;
+        }
+        
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .page {
+            animation: pageSlide 0.5s ease-in-out;
+        }
+        
+        @keyframes pageSlide {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+                body {
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .glass-effect {
+            background: rgba(16, 185, 129, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.1);
+        }
+        
+        .floating-card {
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .floating-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #10b981, #059669);
+            position: relative;
+        }
+        
+        .timeline-dot {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .carousel-3d {
+            perspective: 1000px;
+        }
+        
+        .carousel-item-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .carousel-item-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .morphing-bg {
+            background: #ffffff;
+        }
+        
+        .card-hover-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-hover-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .card-hover-effect:hover::before {
+            left: 100%;
+        }
+        
+        .modal-backdrop {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #10b981, #059669);
+            transform-origin: left;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <div id="scrollIndicator" class="scroll-indicator"></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center neon-glow ">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            <path d="M12 16C12 16 8 18 8 22H16C16 18 12 16 12 16Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black gradient-text">Filhos do Amazonas</h1>
+                        <p class="text-sm text-green-200 font-medium">Preservando Nossa Floresta</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-1 bg-white/10 rounded-full p-2">
+                    <button onclick="showPage('home')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10 active" data-page="home">Home</button>
+                    <button onclick="showPage('eventos')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10" data-page="eventos">Eventos</button>
+                    <button onclick="showPage('contatos')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10" data-page="contatos">Contatos</button>
+                </div>
+                
+                <button class="md:hidden text-white p-2 rounded-xl bg-white/10" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden morphism rounded-2xl m-4 p-4">
+                <div class="space-y-2">
+                    <button onclick="showPage('home')" class="block w-full text-left px-4 py-3 text-white hover:text-green-300 rounded-xl hover:bg-white/10 transition-all">Home</button>
+                    <button onclick="showPage('eventos')" class="block w-full text-left px-4 py-3 text-white hover:text-green-300 rounded-xl hover:bg-white/10 transition-all">Eventos</button>
+                    <button onclick="showPage('contatos')" class="block w-full text-left px-4 py-3 text-white hover:text-green-300 rounded-xl hover:bg-white/10 transition-all">Contatos</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <!-- Sessão inicial -->
+        <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            
+            <!-- Ultra Modern Floating Elements -->
+            <div class="absolute top-32 left-16 floating" style="animation-delay: 0s;">
+                <div class="w-20 h-20 bg-gradient-to-br from-green-400/20 to-emerald-600/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <span class="text-3xl">🌿</span>
+                </div>
+            </div>
+            <div class="absolute top-48 right-24 floating-slow" style="animation-delay: 2s;">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-400/20 to-cyan-600/20 rounded-2xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <span class="text-2xl">🦋</span>
+                </div>
+            </div>
+            <div class="absolute bottom-48 left-32 floating" style="animation-delay: 4s;">
+                <div class="w-24 h-24 bg-gradient-to-br from-yellow-400/20 to-orange-600/20 rounded-full backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <span class="text-3xl">🌺</span>
+                </div>
+            </div>
+            
+            <div class="relative z-10 text-center text-white px-4 max-w-6xl mx-auto fade-in">
+                <div class="mb-12">
+                    <div class="w-32 h-32 glass-effect rounded-3xl flex items-center justify-center mx-auto mb-8 floating neon-glow">
+                        <svg class="w-16 h-16 text-green-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            <path d="M12 16C12 16 8 18 8 22H16C16 18 12 16 12 16Z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">
+                        Filhos do <span class="gradient-text">Amazonas</span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl mb-12 text-green-100 font-light max-w-4xl mx-auto">
+                        Preservando a maior floresta tropical do mundo através de inovação, tecnologia e amor pela natureza
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105 neon-glow">
+                        Junte-se à Revolução Verde 🌱
+                    </button>
+                    <button class="glass-effect text-white hover:bg-white/20 px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105">
+                        Descubra Nossa Missão
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arvore Gigante Section -->
+        <section class="py-32 bg-gradient-to-br from-green-50 to-emerald-100 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="slide-in-left">
+                        <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8 leading-tight">
+                            Nossa <span class="gradient-text">Floresta</span> Gigante
+                        </h2>
+                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                        Somos o Instituto Filhos do Amazonas, uma organização sem fins lucrativos sediada em Manaus,
+                        que acredita na força da comunidade para construir uma Amazônia mais justa, sustentável e cheia
+                        de oportunidades. Atuamos em frentes de educação, cultura, cidadania, sustentabilidade e beleza
+                        com propósito social, levando capacitação, autoestima e novas oportunidades de renda para jovens
+                        e famílias da região.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                                    <span class="text-xl text-white">🌳</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-green-800">50.000+ Árvores Protegidas</h3>
+                                    <p class="text-gray-600">Preservação ativa de biodiversidade</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                                    <span class="text-xl text-white">💧</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-800">1.2M Litros de Água Limpa</h3>
+                                    <p class="text-gray-600">Purificação natural diária</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
+                                    <span class="text-xl text-white">🦜</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-yellow-800">300+ Espécies Protegidas</h3>
+                                    <p class="text-gray-600">Habitat seguro para vida selvagem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-in-right relative">
+                        <div class="tree-float">
+                            <svg class="w-full h-96 text-green-600" viewBox="0 0 400 400" fill="currentColor">
+                                <!-- Tree Trunk -->
+                                <rect x="180" y="280" width="40" height="120" fill="#8B4513" rx="5"/>
+                                
+                                <!-- Tree Layers -->
+                                <ellipse cx="200" cy="280" rx="80" ry="40" fill="#22C55E" opacity="0.9"/>
+                                <ellipse cx="200" cy="250" rx="90" ry="45" fill="#16A34A" opacity="0.8"/>
+                                <ellipse cx="200" cy="220" rx="85" ry="42" fill="#15803D" opacity="0.9"/>
+                                <ellipse cx="200" cy="190" rx="75" ry="38" fill="#166534" opacity="0.8"/>
+                                <ellipse cx="200" cy="160" rx="60" ry="30" fill="#14532D" opacity="0.9"/>
+                                
+                                <!-- Floating Leaves -->
+                                <circle cx="120" cy="180" r="8" fill="#22C55E" opacity="0.6" class="floating"/>
+                                <circle cx="280" cy="200" r="6" fill="#16A34A" opacity="0.7" class="floating-slow"/>
+                                <circle cx="150" cy="120" r="5" fill="#15803D" opacity="0.5" class="floating"/>
+                                <circle cx="250" cy="140" r="7" fill="#22C55E" opacity="0.6" class="floating-slow"/>
+                                
+                                <!-- Birds -->
+                                <path d="M100 100 Q105 95 110 100 Q105 105 100 100" fill="#374151" class="floating"/>
+                                <path d="M300 120 Q305 115 310 120 Q305 125 300 120" fill="#374151" class="floating-slow"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Floating Stats -->
+                        <div class="absolute top-8 -left-8 glass-effect rounded-2xl p-4 floating">
+                            <div class="text-center">
+                                <div class="text-2xl font-black text-green-600">2.5M</div>
+                                <div class="text-sm text-gray-600">Toneladas CO₂</div>
+                                <div class="text-xs text-gray-500">Absorvidas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute bottom-16 -right-8 glass-effect rounded-2xl p-4 floating-slow">
+                            <div class="text-center">
+                                <div class="text-2xl font-black text-blue-600">15</div>
+                                <div class="text-sm text-gray-600">Comunidades</div>
+                                <div class="text-xs text-gray-500">Beneficiadas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Sobre Nós) -->
+        <section class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Sobre Nós - Nossa Missão Inovadora</h2>
+                    <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Promover transformação social na Amazônia através da educação, cultura
+                        meio ambiente e valorização da beleza, capacitando pessoas e fortalecendo a identidade
+                        amazônica com projetos sustentáveis.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center card-hover morphism p-12 rounded-3xl">
+                        <div class="w-24 h-24 bg-gradient-to-br from-red-400 to-red-600 rounded-3xl flex items-center justify-center mx-auto mb-8 neon-glow">
+                            <span class="text-4xl">♥️</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-green-800 mb-6">Beleza e autoestima</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">Acreditamos que a beleza é também ferramenta de transformação,
+                                         inclusão e geração de renda.</p>
+                    </div>
+                    
+                    <div class="text-center card-hover morphism p-12 rounded-3xl">
+                        <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-8 neon-glow">
+                            <span class="text-4xl">🎓</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-blue-800 mb-6">Educação e cultura</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">Como base para o desenvolvimento social.</p>
+                    </div>
+                    
+                    <div class="text-center card-hover morphism p-12 rounded-3xl">
+                        <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-8 neon-glow">
+                            <span class="text-4xl">🌳</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-yellow-800 mb-6">Sustentabilidade</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">Em todos os setores, inclusive na beleza consciente,
+                                         incentivando práticas ecológicas no uso e descarte de produtos.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-32 bg-gradient-to-br from-gray-50 to-green-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Nossa Amazônia Viva</h2>
+                    <p class="text-2xl text-gray-600">Cada imagem conta uma história de preservação e esperança</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🌿</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🦋</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🐆</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🌺</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🦜</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🐒</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🌳</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🦎</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Guardiões da Amazônia</h2>
+                    <p class="text-2xl text-gray-600">Nossa equipe multidisciplinar une paixão, ciência e inovação</p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-12">
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👨‍🌾</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-800 mb-3">João Silva</h3>
+                        <p class="text-lg text-gray-600 mb-3">Diretor Executivo</p>
+                        <p class="text-sm text-gray-500">20 anos revolucionando a conservação ambiental com tecnologia</p>
+                    </div>
+                    
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👩‍🔬</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3">Maria Santos</h3>
+                        <p class="text-lg text-gray-600 mb-3">Bióloga Chefe</p>
+                        <p class="text-sm text-gray-500">PhD em biodiversidade amazônica e inteligência artificial aplicada</p>
+                    </div>
+                    
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👨‍🏫</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-yellow-800 mb-3">Carlos Lima</h3>
+                        <p class="text-lg text-gray-600 mb-3">Coordenador de Educação</p>
+                        <p class="text-sm text-gray-500">Especialista em gamificação e realidade virtual educacional</p>
+                    </div>
+                    
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-purple-400 to-purple-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👩‍💼</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Ana Costa</h3>
+                        <p class="text-lg text-gray-600 mb-3">Gerente de Projetos</p>
+                        <p class="text-sm text-gray-500">MBA em sustentabilidade e desenvolvimento de comunidades</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVENTOS PAGE -->
+    <div id="eventosPage" class="page">
+          <section id="acoes" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Projetos Sociais</h2>
+                <p class="text-gray-600 text-lg">Conheça nossos projetos e veja o impacto real na comunidade</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1: Reflorestamento -->
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('reflorestamento')">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-6xl mb-2">🌳</div>
+                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Reflorestamento Amazônico</h3>
+                        <p class="text-gray-600 text-sm mb-4">Recuperação de áreas degradadas com plantio de espécies nativas</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>📍 Reserva Florestal</span>
+                            <span>📅 2022 - Atual</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
+                            5.000+ Mudas Plantadas
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Proteção Animal -->
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('fauna')">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-6xl mb-2">🐆</div>
+                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Proteção da Fauna</h3>
+                        <p class="text-gray-600 text-sm mb-4">Monitoramento e cuidado dos animais silvestres da região</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>📍 Parque Nacional</span>
+                            <span>📅 2021 - Atual</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
+                            200+ Animais Protegidos
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Comunidades -->
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('comunidades')">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-6xl mb-2">🏘️</div>
+                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Apoio às Comunidades</h3>
+                        <p class="text-gray-600 text-sm mb-4">Desenvolvimento sustentável e capacitação local</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>📍 Aldeias Indígenas</span>
+                            <span>📅 2020 - Atual</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
+                            15 Comunidades Atendidas
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Preservação dos Rios -->
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('rios')">
+                    <div class="h-48 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-6xl mb-2">💧</div>
+                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Preservação dos Rios</h3>
+                        <p class="text-gray-600 text-sm mb-4">Limpeza e monitoramento da qualidade da água</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>📍 Rio Amazonas</span>
+                            <span>📅 2023 - Atual</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
+                            50km de Rio Limpo
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 5: Educação Ambiental -->
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('educacao')">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-6xl mb-2">📚</div>
+                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Educação Ambiental</h3>
+                        <p class="text-gray-600 text-sm mb-4">Conscientização e formação de novos guardiões</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>📍 Escolas Rurais</span>
+                            <span>📅 2022 - Atual</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
+                            1.200+ Crianças Impactadas
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 6: Agricultura Sustentável -->
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('agricultura')">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-lime-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-6xl mb-2">🌾</div>
+                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Agricultura Sustentável</h3>
+                        <p class="text-gray-600 text-sm mb-4">Técnicas ecológicas para produção responsável</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>📍 Cooperativas Locais</span>
+                            <span>📅 2021 - Atual</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-600 to-lime-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
+                            300+ Produtores Capacitados
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página do Projeto (Modal Full Screen) -->
+        <div id="projectPage" class="fixed inset-0 bg-gradient-to-br from-green-900 to-emerald-900 hidden z-50 overflow-y-auto">
+            <div class="min-h-screen">
+                <!-- Header da Página do Projeto -->
+                <header class="glass-effect sticky top-0 z-10">
+                    <div class="max-w-7xl mx-auto px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="closeProjectPage()" class="text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-all">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                <div>
+                                    <h1 id="projectPageTitle" class="text-2xl font-bold text-white"></h1>
+                                    <p class="text-white/70 text-sm">Filhos do Amazonas</p>
+                                </div>
+                            </div>
+                            <button onclick="closeProjectPage()" class="text-white/60 hover:text-white text-2xl">×</button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Conteúdo da Página do Projeto -->
+                <div class="max-w-7xl mx-auto px-6 py-8">
+                    <!-- Hero do Projeto -->
+                    <div id="projectHero" class="glass-effect rounded-3xl p-8 mb-8">
+                        <!-- Conteúdo será preenchido dinamicamente -->
+                    </div>
+
+                    <!-- Galeria de Imagens -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📸 Galeria do Projeto</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectGallery" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Placeholder para imagens -->
+                                <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <div class="text-4xl mb-2">📷</div>
+                                        <p class="text-sm">Adicione suas imagens aqui</p>
+                                    </div>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <div class="text-4xl mb-2">🖼️</div>
+                                        <p class="text-sm">Galeria interativa</p>
+                                    </div>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-teal-400 to-cyan-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <div class="text-4xl mb-2">🎨</div>
+                                        <p class="text-sm">Momentos especiais</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Botão para adicionar imagens -->
+                            <div class="mt-8 text-center">
+                                <label for="imageUpload" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold cursor-pointer hover:shadow-lg transition-all inline-block">
+                                    📤 Adicionar Imagens
+                                </label>
+                                <input type="file" id="imageUpload" multiple accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção de Comentários -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">💬 Comentários da Comunidade</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <!-- Formulário para novo comentário -->
+                            <div class="mb-8">
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <input type="text" id="commentName" placeholder="Seu nome" class="flex-1 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-white/60 border border-white/20 focus:border-green-400 focus:outline-none">
+                                    <input type="email" id="commentEmail" placeholder="Seu email" class="flex-1 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-white/60 border border-white/20 focus:border-green-400 focus:outline-none">
+                                </div>
+                                <textarea id="commentText" placeholder="Compartilhe sua experiência ou opinião sobre este projeto..." rows="4" class="w-full mt-4 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-white/60 border border-white/20 focus:border-green-400 focus:outline-none resize-none"></textarea>
+                                <button onclick="addComment()" class="mt-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                                    💬 Publicar Comentário
+                                </button>
+                            </div>
+
+                            <!-- Lista de comentários -->
+                            <div id="commentsList" class="space-y-4">
+                                <!-- Comentários exemplo -->
+                                <div class="glass-effect p-6 rounded-2xl">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                                            M
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="flex items-center space-x-2 mb-2">
+                                                <h4 class="font-semibold text-white">Maria Silva</h4>
+                                                <span class="text-white/60 text-sm">• há 2 dias</span>
+                                            </div>
+                                            <p class="text-white/90">Participei do último evento de reflorestamento e foi uma experiência incrível! Ver as mudas sendo plantadas e saber que estamos fazendo a diferença para o futuro da Amazônia é emocionante. 🌱💚</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="glass-effect p-6 rounded-2xl">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold">
+                                            J
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="flex items-center space-x-2 mb-2">
+                                                <h4 class="font-semibold text-white">João Santos</h4>
+                                                <span class="text-white/60 text-sm">• há 1 semana</span>
+                                            </div>
+                                            <p class="text-white/90">Projeto fantástico! Como biólogo, fico impressionado com a organização e o impacto real que vocês estão gerando. Continuem assim! 🐆🌿</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição Detalhada do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📋 Sobre o Projeto</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectDescription" class="prose prose-lg text-white/90 max-w-none">
+                                <!-- Conteúdo será preenchido dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parceiros do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">🤝 Nossos Parceiros</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectPartners" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                                <!-- Conteúdo será preenchido dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📊 Impacto Gerado</h2>
+                        <div id="projectStats" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Conteúdo será preenchido dinamicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="text-center">
+                        <div class="glass-effect rounded-3xl p-8">
+                            <h3 class="text-2xl font-bold text-white mb-4">Faça Parte Deste Projeto</h3>
+                            <p class="text-white/80 mb-6">Sua participação pode fazer a diferença na preservação da Amazônia</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onclick="showVolunteerForm()" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                                    🤝 Ser Voluntário
+                                </button>
+                                <button onclick="showDonationInfo()" class="glass-effect text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                                    💚 Apoiar Financeiramente
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTATOS PAGE -->
+    <div id="contatosPage" class="page">
+        <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="relative z-10 text-center text-white px-4 max-w-6xl mx-auto fade-in">
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
+                    Entre em <span class="gradient-text">Contato</span>
+                </h1>
+                <p class="text-2xl md:text-3xl mb-12 text-green-100 font-light max-w-4xl mx-auto">
+                    Vamos juntos criar um futuro sustentável para a Amazônia
+                </p>
+            </div>
+        </section>
+
+        <section class="py-32 bg-gradient-to-br from-green-50 to-emerald-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div class="slide-in-left">
+                        <h2 class="text-4xl font-black text-green-800 mb-8">Conecte-se Conosco</h2>
+                        <div class="space-y-8">
+                            <div class="flex items-center space-x-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center neon-glow">
+                                    <span class="text-2xl">📧</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-green-800">Email</h3>
+                                    <p class="text-gray-600">contato@filhosdoamazonas.org</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center neon-glow">
+                                    <span class="text-2xl">📱</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-800">Telefone</h3>
+                                    <p class="text-gray-600">(92) 99999-9999</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center neon-glow">
+                                    <span class="text-2xl">📍</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-yellow-800">Localização</h3>
+                                    <p class="text-gray-600">Manaus, Amazonas - Brasil</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center neon-glow">
+                                    <span class="text-2xl">🌐</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-purple-800">Website</h3>
+                                    <p class="text-gray-600">www.filhosdoamazonas.org</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-green-800 mb-6">Redes Sociais</h3>
+                            <div class="flex space-x-4">
+                                <button class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center hover:scale-110 transition-all neon-glow">
+                                    <span class="text-2xl">📘</span>
+                                </button>
+                                <button class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-2xl flex items-center justify-center hover:scale-110 transition-all neon-glow">
+                                    <span class="text-2xl">📷</span>
+                                </button>
+                                <button class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl flex items-center justify-center hover:scale-110 transition-all neon-glow">
+                                    <span class="text-2xl">🐦</span>
+                                </button>
+                                <button class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center hover:scale-110 transition-all neon-glow">
+                                    <span class="text-2xl">📺</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-in-right">
+                        <div class="morphism rounded-3xl p-12 neon-glow">
+                            <h3 class="text-3xl font-bold text-green-800 mb-8">Envie uma Mensagem</h3>
+                            <p class="text-sm text-gray-500 mb-8 bg-yellow-100 p-3 rounded-xl">⚠️ Demo - Formulário não funcional</p>
+                            <form class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nome Completo</label>
+                                    <input type="text" placeholder="Seu nome completo" class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                                    <input type="email" placeholder="seu@email.com" class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Assunto</label>
+                                    <select class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50">
+                                        <option>Voluntariado</option>
+                                        <option>Parcerias</option>
+                                        <option>Doações</option>
+                                        <option>Eventos</option>
+                                        <option>Outros</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Mensagem</label>
+                                    <textarea placeholder="Conte-nos como podemos ajudar..." rows="6" class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50"></textarea>
+                                </div>
+                                <button type="button" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 neon-glow">
+                                    Enviar Mensagem 🚀
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+   <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+                            <img src="c:\Users\maxwi\Downloads\LOgo ong - Editado.png" alt="" >
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Filhos do Amazonas</h3>
+                            <p class="text-gray-400 text-sm">ONG Ambiental e Cultural</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Preservando a Amazônia através da cultura e educação, 
+                        construindo um futuro sustentável para nossa região.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#quem-somos" class="hover:text-white transition duration-300">Quem Somos</a></li>
+                        <li><a href="#cursos" class="hover:text-white transition duration-300">Cursos</a></li>
+                        <li><a href="#projetos" class="hover:text-white transition duration-300">Projetos</a></li>
+                        <li><a href="#contato" class="hover:text-white transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Nossos Cursos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-300">Agricultura Sustentável</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Artesanato Regional</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Inclusão Digital</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Piscicultura</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Empreendedorismo</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Av. Cel. Teixeira, 2200B - Ponta Negra
+</p>
+                        <p><i class="fas fa-phone mr-2"></i>(92) 99228-0703</p>
+                        <p><i class="fab fa-whatsapp mr-2"></i>(92) 99228-0703</p>
+                        <p><i class="fas fa-envelope mr-2"></i>filhosdoamazonas@gmail.com</p>
+                    </div>
+                    
+                    <div class="flex space-x-3 mt-4">
+                        <a href="http://facebook.com/institutofilhosdoamazonas" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition duration-300">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/institutofilhosdoamazonas?igsh=MTZwem43OGYxZ2F3MQ==" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition duration-300">
+                            <i class="fab fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Filhos do Amazonas - ONG Ambiental e Cultural. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Page Navigation System
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + 'Page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update navigation active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            document.querySelectorAll(`[data-page="${pageId}"]`).forEach(link => {
+                link.classList.add('active');
+            });
+            
+            // Close mobile menu
+            document.getElementById('mobileMenu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Gallery item click effect with enhanced animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Create ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255,255,255,0.6)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.left = '50%';
+                    ripple.style.top = '50%';
+                    ripple.style.width = '20px';
+                    ripple.style.height = '20px';
+                    ripple.style.marginLeft = '-10px';
+                    ripple.style.marginTop = '-10px';
+                    
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+
+        // Enhanced scroll effects
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const scrolled = window.scrollY > 50;
+            
+            if (scrolled) {
+                nav.style.background = 'rgba(255, 255, 255, 0.15)';
+                nav.style.backdropFilter = 'blur(25px)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.1)';
+                nav.style.backdropFilter = 'blur(20px)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.card-hover, .gallery-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Initialize with home page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  // Scroll Indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Dados dos projetos atualizados
+        const projectsData = {
+            reflorestamento: {
+                title: "🌳 Reflorestamento Amazônico",
+                description: "Recuperação de áreas degradadas através do plantio de espécies nativas da Amazônia",
+                hero: {
+                    icon: "🌳",
+                    stats: "5.000+ mudas plantadas",
+                    location: "Reserva Florestal",
+                    period: "2022 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">O projeto de Reflorestamento Amazônico nasceu da urgente necessidade de recuperar áreas que foram degradadas ao longo dos anos por atividades humanas descontroladas. Nossa missão é devolver à natureza o que foi perdido, plantando espécies nativas cuidadosamente selecionadas.</p>
+                    
+                    <p class="mb-6">Trabalhamos em parceria com comunidades locais, biólogos e especialistas em conservação para garantir que cada muda plantada tenha as melhores chances de crescer e prosperar. Utilizamos técnicas sustentáveis e conhecimento tradicional indígena para maximizar o sucesso do reflorestamento.</p>
+                    
+                    <p class="mb-6">Até agora, conseguimos plantar mais de 5.000 mudas em 75 hectares de área recuperada, com uma impressionante taxa de sobrevivência de 85%. Cada árvore plantada representa esperança para o futuro da Amazônia e do nosso planeta.</p>
+                    
+                    <p>O projeto não apenas restaura o ecossistema, mas também gera empregos locais, educa a comunidade sobre conservação e cria corredores ecológicos que permitem a movimentação segura da fauna silvestre.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "IBAMA" },
+                    { icon: "🌱", name: "SOS Mata Atlântica" },
+                    { icon: "🏢", name: "Petrobras" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌍", name: "WWF Brasil" },
+                    { icon: "🏛️", name: "INPA" }
+                ],
+                stats: [
+                    { label: "Mudas Plantadas", value: "5.000+", icon: "🌱" },
+                    { label: "Hectares Recuperados", value: "75", icon: "🌍" },
+                    { label: "Espécies Nativas", value: "25", icon: "🌿" },
+                    { label: "Taxa de Sobrevivência", value: "85%", icon: "📈" }
+                ]
+            },
+            fauna: {
+                title: "🐆 Proteção da Fauna",
+                description: "Monitoramento e proteção dos animais silvestres da região amazônica",
+                hero: {
+                    icon: "🐆",
+                    stats: "200+ animais protegidos",
+                    location: "Parque Nacional",
+                    period: "2021 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Proteção da Fauna Amazônica é um dos nossos projetos mais importantes e desafiadores. A Amazônia abriga cerca de 10% de toda a biodiversidade mundial, e muitas espécies estão ameaçadas pela perda de habitat e atividades humanas.</p>
+                    
+                    <p class="mb-6">Nossa equipe de biólogos e veterinários trabalha 24 horas por dia monitorando a vida selvagem através de câmeras de alta tecnologia, coleiras de rastreamento e observação direta. Quando encontramos animais feridos ou em perigo, nossa equipe de resgate entra em ação.</p>
+                    
+                    <p class="mb-6">Já conseguimos resgatar e reabilitar mais de 200 animais, incluindo onças-pintadas, araras, preguiças e dezenas de outras espécies. Nossa taxa de recuperação é de 92%, uma das mais altas do país.</p>
+                    
+                    <p>Além do resgate, trabalhamos na educação das comunidades locais sobre a importância da conservação e na criação de corredores ecológicos que permitem a movimentação segura dos animais.</p>
+                `,
+                partners: [
+                    { icon: "🏥", name: "CETAS" },
+                    { icon: "🐾", name: "Instituto Onça" },
+                    { icon: "🦜", name: "Projeto Arara Azul" },
+                    { icon: "🏛️", name: "ICMBio" },
+                    { icon: "🎓", name: "INPA" },
+                    { icon: "🌍", name: "Panthera" }
+                ],
+                stats: [
+                    { label: "Animais Protegidos", value: "200+", icon: "🐾" },
+                    { label: "Espécies Monitoradas", value: "45", icon: "🔍" },
+                    { label: "Resgates Realizados", value: "80", icon: "🚑" },
+                    { label: "Taxa de Recuperação", value: "92%", icon: "💚" }
+                ]
+            },
+            comunidades: {
+                title: "🏘️ Apoio às Comunidades",
+                description: "Desenvolvimento sustentável e capacitação das comunidades locais",
+                hero: {
+                    icon: "🏘️",
+                    stats: "15 comunidades atendidas",
+                    location: "Aldeias Indígenas",
+                    period: "2020 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">O projeto de Apoio às Comunidades reconhece que a preservação da Amazônia só é possível com o envolvimento e bem-estar das pessoas que vivem na região. Trabalhamos diretamente com 15 comunidades indígenas e ribeirinhas para promover desenvolvimento sustentável.</p>
+                    
+                    <p class="mb-6">Oferecemos capacitação em técnicas sustentáveis de agricultura, pesca responsável, artesanato tradicional e gestão de recursos naturais. Também apoiamos a criação de cooperativas que permitem às comunidades comercializar seus produtos de forma justa.</p>
+                    
+                    <p class="mb-6">Nosso trabalho resultou em um aumento médio de 40% na renda das famílias participantes, além de fortalecer a cultura local e promover a autonomia das comunidades. Já formamos 8 cooperativas que atendem mais de 450 famílias.</p>
+                    
+                    <p>Acreditamos que quando as comunidades locais prosperam de forma sustentável, elas se tornam os melhores guardiões da floresta, protegendo naturalmente o meio ambiente para as futuras gerações.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "FUNAI" },
+                    { icon: "🤝", name: "APIB" },
+                    { icon: "🏢", name: "Banco do Brasil" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌱", name: "SEBRAE" },
+                    { icon: "🏛️", name: "INCRA" }
+                ],
+                stats: [
+                    { label: "Comunidades", value: "15", icon: "🏘️" },
+                    { label: "Famílias Beneficiadas", value: "450", icon: "👨‍👩‍👧‍👦" },
+                    { label: "Cooperativas", value: "8", icon: "🏢" },
+                    { label: "Aumento de Renda", value: "40%", icon: "💰" }
+                ]
+            },
+            rios: {
+                title: "💧 Preservação dos Rios",
+                description: "Limpeza e monitoramento da qualidade da água dos rios amazônicos",
+                hero: {
+                    icon: "💧",
+                    stats: "50km de rio limpo",
+                    location: "Rio Amazonas",
+                    period: "2023 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">Os rios da Amazônia são as artérias vitais da floresta, fornecendo água limpa, transporte e sustento para milhões de pessoas e incontáveis espécies. Nosso projeto de Preservação dos Rios foca na limpeza e monitoramento contínuo da qualidade da água.</p>
+                    
+                    <p class="mb-6">Utilizamos tecnologia de ponta para monitorar a qualidade da água em tempo real, identificando poluentes e fontes de contaminação. Nossa equipe realiza limpezas regulares, removendo lixo e detritos que ameaçam o ecossistema aquático.</p>
+                    
+                    <p class="mb-6">Já conseguimos limpar 50 quilômetros de rios, removendo mais de 12 toneladas de lixo e melhorando a qualidade da água em 65%. Instalamos 8 estações de monitoramento que fornecem dados em tempo real sobre a saúde dos rios.</p>
+                    
+                    <p>Trabalhamos em parceria com pescadores locais, que se tornaram nossos aliados na proteção dos rios. Eles nos ajudam a identificar problemas e participam ativamente das ações de limpeza e conservação.</p>
+                `,
+                partners: [
+                    { icon: "💧", name: "ANA" },
+                    { icon: "🏛️", name: "IBAMA" },
+                    { icon: "🎣", name: "Colônia de Pescadores" },
+                    { icon: "🏢", name: "Sabesp" },
+                    { icon: "🎓", name: "INPA" },
+                    { icon: "🌊", name: "SOS Rios" }
+                ],
+                stats: [
+                    { label: "Km de Rio Limpo", value: "50", icon: "🌊" },
+                    { label: "Toneladas de Lixo", value: "12", icon: "♻️" },
+                    { label: "Estações de Monitoramento", value: "8", icon: "📡" },
+                    { label: "Melhoria da Qualidade", value: "65%", icon: "📈" }
+                ]
+            },
+            educacao: {
+                title: "📚 Educação Ambiental",
+                description: "Conscientização e formação de novos guardiões da natureza",
+                hero: {
+                    icon: "📚",
+                    stats: "1.200+ crianças impactadas",
+                    location: "Escolas Rurais",
+                    period: "2022 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Educação Ambiental é a base para um futuro sustentável. Acreditamos que ao educar as crianças de hoje, estamos formando os guardiões da Amazônia de amanhã. Nosso programa atende escolas rurais em toda a região amazônica.</p>
+                    
+                    <p class="mb-6">Desenvolvemos material didático especial, adaptado à realidade local, que combina conhecimento científico com sabedoria tradicional. Nossas atividades incluem teatro ambiental, oficinas práticas, concursos de desenho e visitas à floresta.</p>
+                    
+                    <p class="mb-6">Já impactamos mais de 1.200 crianças em 20 escolas diferentes. Também capacitamos 45 professores para que possam continuar o trabalho de educação ambiental mesmo após nossa visita. Distribuímos mais de 2.000 materiais educativos.</p>
+                    
+                    <p>O programa não se limita às crianças - envolvemos toda a família e a comunidade, criando uma rede de conscientização que se expande naturalmente, multiplicando o impacto de nossas ações.</p>
+                `,
+                partners: [
+                    { icon: "🏫", name: "Secretaria de Educação" },
+                    { icon: "📚", name: "MEC" },
+                    { icon: "🎭", name: "Grupo Teatral Verde" },
+                    { icon: "🎨", name: "Instituto Arte Ambiental" },
+                    { icon: "🏢", name: "Fundação Bradesco" },
+                    { icon: "📖", name: "Editora Saraiva" }
+                ],
+                stats: [
+                    { label: "Crianças Impactadas", value: "1.200+", icon: "👶" },
+                    { label: "Escolas Visitadas", value: "20", icon: "🏫" },
+                    { label: "Professores Capacitados", value: "45", icon: "👩‍🏫" },
+                    { label: "Material Distribuído", value: "2.000", icon: "📚" }
+                ]
+            },
+            agricultura: {
+                title: "🌾 Agricultura Sustentável",
+                description: "Técnicas ecológicas para produção responsável e sustentável",
+                hero: {
+                    icon: "🌾",
+                    stats: "300+ produtores capacitados",
+                    location: "Cooperativas Locais",
+                    period: "2021 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Agricultura Sustentável é fundamental para conciliar produção de alimentos com preservação ambiental. Nosso projeto capacita produtores rurais em técnicas que aumentam a produtividade sem agredir o meio ambiente.</p>
+                    
+                    <p class="mb-6">Ensinamos métodos como agricultura orgânica, sistemas agroflorestais, compostagem, controle biológico de pragas e rotação de culturas. Também apoiamos a certificação orgânica dos produtos, agregando valor à produção local.</p>
+                    
+                    <p class="mb-6">Já capacitamos mais de 300 produtores que cultivam 150 hectares de forma orgânica. Conseguimos aumentar a produtividade em 35% enquanto reduzimos o uso de agrotóxicos em 90%. Apoiamos 12 tipos diferentes de cultivo sustentável.</p>
+                    
+                    <p>Criamos uma feira de produtos orgânicos que conecta produtores diretamente aos consumidores, garantindo preços justos e produtos frescos. O projeto gera renda sustentável enquanto preserva o solo e a biodiversidade local.</p>
+                `,
+                partners: [
+                    { icon: "🌱", name: "EMBRAPA" },
+                    { icon: "🏢", name: "SEBRAE" },
+                    { icon: "🏛️", name: "INCRA" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌾", name: "Cooperativa Orgânica" },
+                    { icon: "🏪", name: "Feira Orgânica" }
+                ],
+                stats: [
+                    { label: "Produtores Capacitados", value: "300+", icon: "👨‍🌾" },
+                    { label: "Hectares Orgânicos", value: "150", icon: "🌾" },
+                    { label: "Tipos de Cultivo", value: "12", icon: "🥕" },
+                    { label: "Aumento da Produção", value: "35%", icon: "📊" }
+                ]
+            }
+        };
+
+        function openProjectPage(projectId) {
+            const project = projectsData[projectId];
+            if (!project) return;
+
+            // Preencher título
+            document.getElementById('projectPageTitle').textContent = project.title;
+
+            // Preencher hero
+            document.getElementById('projectHero').innerHTML = `
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="text-center lg:text-left flex-1">
+                        <div class="text-8xl mb-4">${project.hero.icon}</div>
+                        <h2 class="text-4xl font-bold text-white mb-4">${project.title}</h2>
+                        <p class="text-xl text-white/80 mb-6">${project.description}</p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="glass-effect px-4 py-2 rounded-full">
+                                <span class="text-white/60 text-sm">📍 ${project.hero.location}</span>
+                            </div>
+                            <div class="glass-effect px-4 py-2 rounded-full">
+                                <span class="text-white/60 text-sm">📅 ${project.hero.period}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-6 rounded-3xl">
+                            <div class="text-3xl font-bold mb-2">${project.hero.stats}</div>
+                            <p class="text-sm opacity-80">Impacto Atual</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Preencher descrição completa
+            document.getElementById('projectDescription').innerHTML = project.fullDescription;
+
+            // Preencher parceiros
+            document.getElementById('projectPartners').innerHTML = project.partners.map(partner => `
+                <div class="glass-effect p-4 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">${partner.icon}</div>
+                    <p class="text-white/80 text-sm font-semibold">${partner.name}</p>
+                </div>
+            `).join('');
+
+            // Preencher estatísticas
+            document.getElementById('projectStats').innerHTML = project.stats.map(stat => `
+                <div class="glass-effect p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-3">${stat.icon}</div>
+                    <div class="text-2xl font-bold text-white mb-2">${stat.value}</div>
+                    <p class="text-white/70 text-sm">${stat.label}</p>
+                </div>
+            `).join('');
+
+            // Mostrar página
+            document.getElementById('projectPage').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectPage() {
+            document.getElementById('projectPage').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addComment() {
+            const name = document.getElementById('commentName').value.trim();
+            const email = document.getElementById('commentEmail').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+
+            if (!name || !email || !text) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            // Criar novo comentário
+            const commentsList = document.getElementById('commentsList');
+            const newComment = document.createElement('div');
+            newComment.className = 'glass-effect p-6 rounded-2xl';
+            
+            const initial = name.charAt(0).toUpperCase();
+            const colors = ['from-green-400 to-emerald-500', 'from-blue-400 to-teal-500', 'from-purple-400 to-pink-500', 'from-orange-400 to-red-500'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            newComment.innerHTML = `
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br ${randomColor} rounded-full flex items-center justify-center text-white font-bold">
+                        ${initial}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <h4 class="font-semibold text-white">${name}</h4>
+                            <span class="text-white/60 text-sm">• agora</span>
+                        </div>
+                        <p class="text-white/90">${text}</p>
+                    </div>
+                </div>
+            `;
+
+            // Adicionar no topo da lista
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+
+            // Limpar formulário
+            document.getElementById('commentName').value = '';
+            document.getElementById('commentEmail').value = '';
+            document.getElementById('commentText').value = '';
+
+            // Mostrar mensagem de sucesso
+            const button = document.querySelector('button[onclick="addComment()"]');
+            const originalText = button.textContent;
+            button.textContent = '✅ Comentário Publicado!';
+            button.style.background = 'linear-gradient(to right, #10b981, #059669)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
+
+        function handleImageUpload(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('projectGallery');
+            
+            // Limpar placeholders
+            gallery.innerHTML = '';
+            
+            Array.from(files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform';
+                        imageDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="Projeto ${index + 1}" class="w-full h-full object-cover" onclick="openImageModal('${e.target.result}')">
+                        `;
+                        gallery.appendChild(imageDiv);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Adicionar botão para mais imagens
+            const addMoreDiv = document.createElement('div');
+            addMoreDiv.className = 'aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center cursor-pointer hover:scale-105 transition-transform';
+            addMoreDiv.innerHTML = `
+                <label for="moreImages" class="text-center text-white cursor-pointer">
+                    <div class="text-4xl mb-2">➕</div>
+                    <p class="text-sm">Adicionar mais</p>
+                </label>
+                <input type="file" id="moreImages" multiple accept="image/*" class="hidden" onchange="addMoreImages(event)">
+            `;
+            gallery.appendChild(addMoreDiv);
+        }
+
+        function addMoreImages(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('projectGallery');
+            const addButton = gallery.lastElementChild;
+            
+            Array.from(files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform';
+                        imageDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="Nova imagem ${index + 1}" class="w-full h-full object-cover" onclick="openImageModal('${e.target.result}')">
+                        `;
+                        gallery.insertBefore(imageDiv, addButton);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        function openImageModal(imageSrc) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="max-w-4xl max-h-full relative">
+                    <img src="${imageSrc}" alt="Imagem ampliada" class="max-w-full max-h-full object-contain rounded-2xl">
+                    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center">×</button>
+                </div>
+            `;
+            modal.onclick = function(e) {
+                if (e.target === modal) modal.remove();
+            };
+            document.body.appendChild(modal);
+        }
+
+        function showVolunteerForm() {
+            document.getElementById('volunteerModal').classList.remove('hidden');
+            document.getElementById('volunteerModal').classList.add('flex');
+        }
+
+        function showDonationInfo() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.getElementById('donationModal').classList.add('flex');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.getElementById(modalId).classList.remove('flex');
+        }
+
+        // Dados dos eventos amazônicos
+        const eventData = {
+            event1: {
+                title: "🌳 Reflorestamento Comunitário",
+                info: [
+                    "📅 <strong>Data:</strong> 15 de Janeiro de 2024",
+                    "🕘 <strong>Horário:</strong> 08:00 às 16:00",
+                    "📍 <strong>Local:</strong> Reserva Florestal - Área de Recuperação",
+                    "👥 <strong>Voluntários:</strong> 150+ pessoas confirmadas",
+                    "🎯 <strong>Missão:</strong> Plantar 1000 mudas nativas para recuperar áreas degradadas"
+                ],
+                schedule: [
+                    "08:00 - Credenciamento e café da manhã",
+                    "08:30 - Briefing sobre técnicas de plantio",
+                    "09:00 - Início do plantio das mudas",
+                    "12:00 - Almoço comunitário",
+                    "14:00 - Continuação do plantio",
+                    "15:30 - Atividades educativas",
+                    "16:00 - Encerramento e celebração"
+                ],
+                extraInfo: [
+                    "• Roupas confortáveis e calçados fechados obrigatórios",
+                    "• Protetor solar e repelente fornecidos",
+                    "• Ferramentas e mudas incluídas",
+                    "• Certificado de participação",
+                    "• Transporte disponível do centro da cidade"
+                ]
+            },
+            event2: {
+                title: "🐆 Proteção da Fauna",
+                info: [
+                    "📅 <strong>Data:</strong> 22 de Janeiro de 2024",
+                    "🕘 <strong>Horário:</strong> 06:00 às 18:00",
+                    "📍 <strong>Local:</strong> Parque Nacional da Amazônia",
+                    "👥 <strong>Biólogos:</strong> 20+ especialistas",
+                    "🎯 <strong>Missão:</strong> Monitoramento e cuidado dos animais silvestres"
+                ],
+                schedule: [
+                    "06:00 - Saída para o parque",
+                    "07:00 - Instalação de câmeras",
+                    "09:00 - Monitoramento de trilhas",
+                    "12:00 - Almoço na base",
+                    "14:00 - Coleta de dados",
+                    "16:00 - Análise dos resultados",
+                    "18:00 - Retorno"
+                ],
+                extraInfo: [
+                    "• Experiência com animais silvestres desejável",
+                    "• Equipamentos de segurança fornecidos",
+                    "• Acompanhamento de veterinários",
+                    "• Documentação científica",
+                    "• Contribuição para pesquisa"
+                ]
+            },
+            event3: {
+                title: "🏘️ Apoio às Comunidades",
+                info: [
+                    "📅 <strong>Data:</strong> 28 de Janeiro de 2024",
+                    "🕘 <strong>Horário:</strong> 09:00 às 17:00",
+                    "📍 <strong>Local:</strong> Aldeia Indígena Tikuna",
+                    "👥 <strong>Famílias:</strong> 80+ beneficiadas",
+                    "🎯 <strong>Missão:</strong> Capacitação e desenvolvimento sustentável"
+                ],
+                schedule: [
+                    "09:00 - Chegada e boas-vindas",
+                    "09:30 - Workshop de artesanato",
+                    "11:00 - Técnicas de agricultura",
+                    "12:30 - Almoço tradicional",
+                    "14:00 - Gestão de recursos",
+                    "15:30 - Troca de experiências",
+                    "17:00 - Encerramento"
+                ],
+                extraInfo: [
+                    "• Respeito às tradições locais",
+                    "• Intérprete disponível",
+                    "• Material didático incluso",
+                    "• Certificação de capacitação",
+                    "• Produtos locais disponíveis"
+                ]
+            },
+            event4: {
+                title: "💧 Preservação dos Rios",
+                info: [
+                    "📅 <strong>Data:</strong> 05 de Fevereiro de 2024",
+                    "🕘 <strong>Horário:</strong> 07:00 às 15:00",
+                    "📍 <strong>Local:</strong> Rio Amazonas - Trecho urbano",
+                    "👥 <strong>Voluntários:</strong> 100+ pessoas",
+                    "🎯 <strong>Missão:</strong> Limpeza e monitoramento da qualidade da água"
+                ],
+                schedule: [
+                    "07:00 - Concentração na margem",
+                    "07:30 - Distribuição de equipamentos",
+                    "08:00 - Início da limpeza",
+                    "10:00 - Coleta de amostras",
+                    "12:00 - Pausa para lanche",
+                    "13:00 - Continuação da limpeza",
+                    "15:00 - Balanço final"
+                ],
+                extraInfo: [
+                    "• Equipamentos de segurança obrigatórios",
+                    "• Saber nadar é recomendado",
+                    "• Análise laboratorial das amostras",
+                    "• Relatório de impacto",
+                    "• Parceria com pescadores locais"
+                ]
+            }
+        };
+
+        function showEventDetails(eventId) {
+            const event = eventData[eventId];
+            if (!event) return;
+
+            document.getElementById('eventTitle').innerHTML = event.title;
+            
+            // Preencher informações com estilo moderno
+            document.getElementById('eventInfo').innerHTML = event.info.map(info => 
+                `<div class="glass-effect p-4 rounded-xl"><p class="text-white">${info}</p></div>`
+            ).join('');
+            
+            // Preencher programação
+            document.getElementById('eventSchedule').innerHTML = event.schedule.map(item => 
+                `<div class="glass-effect p-3 rounded-lg"><p class="text-white/90 text-sm">${item}</p></div>`
+            ).join('');
+            
+            // Preencher informações extras
+            document.getElementById('eventExtraInfo').innerHTML = event.extraInfo.map(info => 
+                `<p class="text-sm">${info}</p>`
+            ).join('');
+
+            document.getElementById('eventModal').classList.remove('hidden');
+            document.getElementById('eventModal').classList.add('flex');
+        }
+
+        // Fechar modal clicando fora
+        window.onclick = function(event) {
+            const modals = ['volunteerModal', 'donationModal', 'eventModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target === modal) {
+                    closeModal(modalId);
+                }
+            });
+        }
+
+        // Inicialização
+        window.addEventListener('load', () => {
+            // Smooth scroll para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+
+
+
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9805d0c851b3dd50',t:'MTc1ODA4Mjg3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
