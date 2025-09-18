@@ -181,7 +181,7 @@
         }
         
         .glass-effect {
-            background: rgba(16, 185, 129, 0.05);
+            background: rgba(14, 121, 66, 0.05);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(16, 185, 129, 0.2);
             box-shadow: 0 8px 32px rgba(16, 185, 129, 0.1);
@@ -288,10 +288,46 @@
             transform-origin: left;
             z-index: 1000;
         }
+        /*///////////////////////////////////////////////////////////////////////  ANIMAÇÃO DE FUNDO  //////////////////////////////////////////////////////////////////////////////*/
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
+    <!--ScrownIndicator-->
+
         <div id="scrollIndicator" class="scroll-indicator"></div>
+
+        <!-- Floating Particles Background -->
+    <div class="fixed inset-0 pointer-events-none">
+        <!-- Bolhas verdes sutis -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full opacity-20 floating-animation"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 bg-gradient-to-br from-emerald-300 to-green-400 rounded-full opacity-15 floating-animation" style="animation-delay: -2s;"></div>
+        <div class="absolute bottom-40 left-1/4 w-3 h-3 bg-gradient-to-br from-green-400 to-teal-400 rounded-full opacity-25 floating-animation" style="animation-delay: -4s;"></div>
+        <div class="absolute top-1/3 right-1/3 w-5 h-5 bg-gradient-to-br from-teal-300 to-green-300 rounded-full opacity-18 floating-animation" style="animation-delay: -1s;"></div>
+        <div class="absolute top-60 left-1/2 w-2 h-2 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full opacity-30 floating-animation" style="animation-delay: -3s;"></div>
+        <div class="absolute bottom-20 right-1/4 w-4 h-4 bg-gradient-to-br from-green-300 to-emerald-300 rounded-full opacity-22 floating-animation" style="animation-delay: -5s;"></div>
+        
+        <!-- Gradientes verdes de fundo -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-100 to-transparent rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-emerald-100 to-transparent rounded-full opacity-8 blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-teal-100 to-transparent rounded-full opacity-12 blur-2xl"></div>
+    </div>
+
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-effect shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -310,9 +346,9 @@
                 </div>
                 
                 <div class="hidden md:flex space-x-1 bg-white/10 rounded-full p-2">
-                    <button onclick="showPage('home')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10 active" data-page="home">Home</button>
-                    <button onclick="showPage('eventos')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10" data-page="eventos">Eventos</button>
-                    <button onclick="showPage('contatos')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10" data-page="contatos">Contatos</button>
+                    <button onclick="showPage('home')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10 active" data-page="home" style="color: #064e3b;">Home</button>
+                    <button onclick="showPage('eventos')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10" data-page="eventos" style="color: #064e3b;">Eventos</button>
+                    <button onclick="showPage('contatos')" class="nav-link px-6 py-3 text-white hover:text-green-300 font-semibold transition-all rounded-full hover:bg-white/10" data-page="contatos" style="color: #064e3b;">Contatos</button>
                 </div>
                 
                 <button class="md:hidden text-white p-2 rounded-xl bg-white/10" onclick="toggleMobileMenu()">
@@ -432,23 +468,12 @@
                     <div class="slide-in-right relative">
                         <div class="tree-float">
                             <svg class="w-full h-96 text-green-600" viewBox="0 0 400 400" fill="currentColor">
-                                <!-- Tree Trunk -->
-                                <rect x="180" y="280" width="40" height="120" fill="#8B4513" rx="5"/>
+                                <!-- Logo -->
                                 
-                                <!-- Tree Layers -->
-                                <ellipse cx="200" cy="280" rx="80" ry="40" fill="#22C55E" opacity="0.9"/>
-                                <ellipse cx="200" cy="250" rx="90" ry="45" fill="#16A34A" opacity="0.8"/>
-                                <ellipse cx="200" cy="220" rx="85" ry="42" fill="#15803D" opacity="0.9"/>
-                                <ellipse cx="200" cy="190" rx="75" ry="38" fill="#166534" opacity="0.8"/>
-                                <ellipse cx="200" cy="160" rx="60" ry="30" fill="#14532D" opacity="0.9"/>
-                                
-                                <!-- Floating Leaves -->
-                                <circle cx="120" cy="180" r="8" fill="#22C55E" opacity="0.6" class="floating"/>
-                                <circle cx="280" cy="200" r="6" fill="#16A34A" opacity="0.7" class="floating-slow"/>
-                                <circle cx="150" cy="120" r="5" fill="#15803D" opacity="0.5" class="floating"/>
-                                <circle cx="250" cy="140" r="7" fill="#22C55E" opacity="0.6" class="floating-slow"/>
-                                
-                                <!-- Birds -->
+
+                                <img src="c:\Users\maxwi\Downloads\LOgo ong - Editado.png" alt="" style="width: 400px; height: 420px">
+
+                                <!-- Passaros -->
                                 <path d="M100 100 Q105 95 110 100 Q105 105 100 100" fill="#374151" class="floating"/>
                                 <path d="M300 120 Q305 115 310 120 Q305 125 300 120" fill="#374151" class="floating-slow"/>
                             </svg>
@@ -518,95 +543,28 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="py-32 bg-gradient-to-br from-gray-50 to-green-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Nossa Amazônia Viva</h2>
-                    <p class="text-2xl text-gray-600">Cada imagem conta uma história de preservação e esperança</p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🌿</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🦋</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🐆</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🌺</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🦜</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🐒</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🌳</span>
-                    </div>
-                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🦎</span>
-                    </div>
-                </div>
+        <!-- EXPLORAR EVENTOS -->
+        <section class="text-center mb-20">
+            <h2 class="text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                Protegendo a <span class="gradient-text">Amazônia</span><br>
+                <span class="text-5xl">Nossa Casa Comum</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                Junte-se aos guardiões da floresta que preservam a biodiversidade e apoiam as comunidades amazônicas
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="showPage('eventos')" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all">
+                    Explorar Eventos
+                </button>
+                <button class="glass-effect text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition-all border border-green-200">
+                    Começar Agora
+                </button>
             </div>
         </section>
 
-        <!-- Team Section -->
-        <section class="py-32 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Guardiões da Amazônia</h2>
-                    <p class="text-2xl text-gray-600">Nossa equipe multidisciplinar une paixão, ciência e inovação</p>
-                </div>
-                
-                <div class="grid md:grid-cols-4 gap-12">
-                    <div class="text-center card-hover">
-                        <div class="w-40 h-40 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
-                            <span class="text-6xl text-white">👨‍🌾</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-green-800 mb-3">João Silva</h3>
-                        <p class="text-lg text-gray-600 mb-3">Diretor Executivo</p>
-                        <p class="text-sm text-gray-500">20 anos revolucionando a conservação ambiental com tecnologia</p>
-                    </div>
-                    
-                    <div class="text-center card-hover">
-                        <div class="w-40 h-40 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
-                            <span class="text-6xl text-white">👩‍🔬</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-blue-800 mb-3">Maria Santos</h3>
-                        <p class="text-lg text-gray-600 mb-3">Bióloga Chefe</p>
-                        <p class="text-sm text-gray-500">PhD em biodiversidade amazônica e inteligência artificial aplicada</p>
-                    </div>
-                    
-                    <div class="text-center card-hover">
-                        <div class="w-40 h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
-                            <span class="text-6xl text-white">👨‍🏫</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-yellow-800 mb-3">Carlos Lima</h3>
-                        <p class="text-lg text-gray-600 mb-3">Coordenador de Educação</p>
-                        <p class="text-sm text-gray-500">Especialista em gamificação e realidade virtual educacional</p>
-                    </div>
-                    
-                    <div class="text-center card-hover">
-                        <div class="w-40 h-40 bg-gradient-to-br from-purple-400 to-purple-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
-                            <span class="text-6xl text-white">👩‍💼</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Ana Costa</h3>
-                        <p class="text-lg text-gray-600 mb-3">Gerente de Projetos</p>
-                        <p class="text-sm text-gray-500">MBA em sustentabilidade e desenvolvimento de comunidades</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- EVENTOS PAGE -->
-    <div id="eventosPage" class="page">
-          <section id="acoes" class="mb-20">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+         <!-- Projetos Sociais com Galeria -->
+        <section id="acoes" class="mb-20">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Projetos Sociais</h2>
                 <p class="text-gray-600 text-lg">Conheça nossos projetos e veja o impacto real na comunidade</p>
@@ -807,58 +765,6 @@
                         </div>
                     </div>
 
-                    <!-- Seção de Comentários -->
-                    <div class="mb-8">
-                        <h2 class="text-3xl font-bold text-white mb-6">💬 Comentários da Comunidade</h2>
-                        <div class="glass-effect rounded-3xl p-8">
-                            <!-- Formulário para novo comentário -->
-                            <div class="mb-8">
-                                <div class="flex flex-col sm:flex-row gap-4">
-                                    <input type="text" id="commentName" placeholder="Seu nome" class="flex-1 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-white/60 border border-white/20 focus:border-green-400 focus:outline-none">
-                                    <input type="email" id="commentEmail" placeholder="Seu email" class="flex-1 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-white/60 border border-white/20 focus:border-green-400 focus:outline-none">
-                                </div>
-                                <textarea id="commentText" placeholder="Compartilhe sua experiência ou opinião sobre este projeto..." rows="4" class="w-full mt-4 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-white/60 border border-white/20 focus:border-green-400 focus:outline-none resize-none"></textarea>
-                                <button onclick="addComment()" class="mt-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
-                                    💬 Publicar Comentário
-                                </button>
-                            </div>
-
-                            <!-- Lista de comentários -->
-                            <div id="commentsList" class="space-y-4">
-                                <!-- Comentários exemplo -->
-                                <div class="glass-effect p-6 rounded-2xl">
-                                    <div class="flex items-start space-x-4">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
-                                            M
-                                        </div>
-                                        <div class="flex-1">
-                                            <div class="flex items-center space-x-2 mb-2">
-                                                <h4 class="font-semibold text-white">Maria Silva</h4>
-                                                <span class="text-white/60 text-sm">• há 2 dias</span>
-                                            </div>
-                                            <p class="text-white/90">Participei do último evento de reflorestamento e foi uma experiência incrível! Ver as mudas sendo plantadas e saber que estamos fazendo a diferença para o futuro da Amazônia é emocionante. 🌱💚</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="glass-effect p-6 rounded-2xl">
-                                    <div class="flex items-start space-x-4">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold">
-                                            J
-                                        </div>
-                                        <div class="flex-1">
-                                            <div class="flex items-center space-x-2 mb-2">
-                                                <h4 class="font-semibold text-white">João Santos</h4>
-                                                <span class="text-white/60 text-sm">• há 1 semana</span>
-                                            </div>
-                                            <p class="text-white/90">Projeto fantástico! Como biólogo, fico impressionado com a organização e o impacto real que vocês estão gerando. Continuem assim! 🐆🌿</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Descrição Detalhada do Projeto -->
                     <div class="mb-8">
                         <h2 class="text-3xl font-bold text-white mb-6">📋 Sobre o Projeto</h2>
@@ -905,9 +811,340 @@
                 </div>
             </div>
         </div>
+        </div>
+
+
+
+
+        <!-- Gallery Section -->
+        <section class="py-32 bg-gradient-to-br from-gray-50 to-green-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Nossa Amazônia Viva</h2>
+                    <p class="text-2xl text-gray-600">Cada imagem conta uma história de preservação e esperança</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🌿</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🦋</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🐆</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🌺</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🦜</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🐒</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🌳</span>
+                    </div>
+                    <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
+                        <span class="text-6xl">🦎</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Guardiões da Amazônia</h2>
+                    <p class="text-2xl text-gray-600">Nossa equipe multidisciplinar une paixão, ciência e inovação</p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-12">
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👨‍🌾</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-800 mb-3">João Silva</h3>
+                        <p class="text-lg text-gray-600 mb-3">Diretor Executivo</p>
+                        <p class="text-sm text-gray-500">20 anos revolucionando a conservação ambiental com tecnologia</p>
+                    </div>
+                    
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👩‍🔬</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3">Maria Santos</h3>
+                        <p class="text-lg text-gray-600 mb-3">Bióloga Chefe</p>
+                        <p class="text-sm text-gray-500">PhD em biodiversidade amazônica e inteligência artificial aplicada</p>
+                    </div>
+                    
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👨‍🏫</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-yellow-800 mb-3">Carlos Lima</h3>
+                        <p class="text-lg text-gray-600 mb-3">Coordenador de Educação</p>
+                        <p class="text-sm text-gray-500">Especialista em gamificação e realidade virtual educacional</p>
+                    </div>
+                    
+                    <div class="text-center card-hover">
+                        <div class="w-40 h-40 bg-gradient-to-br from-purple-400 to-purple-600 rounded-3xl mx-auto mb-6 flex items-center justify-center neon-glow">
+                            <span class="text-6xl text-white">👩‍💼</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Ana Costa</h3>
+                        <p class="text-lg text-gray-600 mb-3">Gerente de Projetos</p>
+                        <p class="text-sm text-gray-500">MBA em sustentabilidade e desenvolvimento de comunidades</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- CONTATOS PAGE -->
+    <!-- EVENTOS PAGE -->
+    <div id="eventosPage" class="page">
+        <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="relative z-10 text-center text-white px-4 max-w-6xl mx-auto fade-in">
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
+                    Nossos <span class="gradient-text">Eventos</span>
+                </h1>
+                <p class="text-2xl md:text-3xl mb-12 text-green-100 font-light max-w-4xl mx-auto">
+                    Participe de experiências únicas que conectam pessoas, natureza e sustentabilidade
+                </p>
+            </div>
+        </section>
+            <div class="max-w-7xl mx-auto px-6 py-12">
+
+                
+        <section id="eventos" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8" style="margin-top: 50px;">Próximos Eventos</h2>
+                <p class="text-2xl text-gray-600">Experiências transformadoras que você não pode perder</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Evento 1 -->
+                <div class="glass-effect rounded-3xl p-8 floating-card card-hover-effect bg-white border border-green-100">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🌳</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Reflorestamento Comunitário</h3>
+                        <p class="text-gray-600">Plantio de mudas nativas para recuperar áreas degradadas</p>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Local</p>
+                            <p class="text-gray-800 font-semibold">Reserva Florestal</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Voluntários</p>
+                            <p class="text-gray-800 font-semibold">150+ pessoas</p>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-2xl font-bold text-lg mb-2">
+                            15 Jan 2024
+                        </div>
+                        <p class="text-gray-600">08:00 - 16:00</p>
+                    </div>
+                    <button onclick="showEventDetails('event1')" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        Descobrir Mais
+                    </button>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="glass-effect rounded-3xl p-8 floating-card card-hover-effect bg-white border border-green-100">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🐆</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Proteção da Fauna</h3>
+                        <p class="text-gray-600">Monitoramento e cuidado dos animais silvestres</p>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Local</p>
+                            <p class="text-gray-800 font-semibold">Parque Nacional</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Biólogos</p>
+                            <p class="text-gray-800 font-semibold">20+ especialistas</p>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-2xl font-bold text-lg mb-2">
+                            22 Jan 2024
+                        </div>
+                        <p class="text-gray-600">06:00 - 18:00</p>
+                    </div>
+                    <button onclick="showEventDetails('event2')" class="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        Descobrir Mais
+                    </button>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="glass-effect rounded-3xl p-8 floating-card card-hover-effect bg-white border border-green-100">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🏘️</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Apoio às Comunidades</h3>
+                        <p class="text-gray-600">Capacitação e desenvolvimento sustentável local</p>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Local</p>
+                            <p class="text-gray-800 font-semibold">Aldeia Indígena</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Famílias</p>
+                            <p class="text-gray-800 font-semibold">80+ beneficiadas</p>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-2xl font-bold text-lg mb-2">
+                            28 Jan 2024
+                        </div>
+                        <p class="text-gray-600">09:00 - 17:00</p>
+                    </div>
+                    <button onclick="showEventDetails('event3')" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        Descobrir Mais
+                    </button>
+                </div>
+
+                <!-- Evento 4 -->
+                <div class="glass-effect rounded-3xl p-8 floating-card card-hover-effect bg-white border border-green-100">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">💧</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Preservação dos Rios</h3>
+                        <p class="text-gray-600">Limpeza e monitoramento da qualidade da água</p>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Local</p>
+                            <p class="text-gray-800 font-semibold">Rio Amazonas</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                            <p class="text-gray-500 text-sm">Voluntários</p>
+                            <p class="text-gray-800 font-semibold">100+ pessoas</p>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-2xl font-bold text-lg mb-2">
+                            05 Fev 2024
+                        </div>
+                        <p class="text-gray-600">07:00 - 15:00</p>
+                    </div>
+                    <button onclick="showEventDetails('event4')" class="w-full bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        Descobrir Mais
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+        
+            <!-- Modal para Detalhes dos Eventos -->
+    <div id="eventModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
+        <div class="glass-effect rounded-3xl p-8 max-w-5xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-start mb-8">
+                <h3 id="eventTitle" class="text-4xl font-bold text-white"></h3>
+                <button onclick="closeModal('eventModal')" class="text-white/60 hover:text-white text-3xl font-light">×</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Informações do Evento -->
+                <div>
+                    <div id="eventInfo" class="space-y-4 mb-8"></div>
+                    
+                    <!-- Programação -->
+                    <div class="glass-effect p-6 rounded-2xl">
+                        <h4 class="text-xl font-bold text-white mb-4">📋 Programação Completa</h4>
+                        <div id="eventSchedule" class="space-y-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Vídeo e Info Extra -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">🎬 Vídeo Promocional</h4>
+                    <div class="glass-effect rounded-2xl overflow-hidden aspect-video flex items-center justify-center mb-6">
+                        <div class="text-center text-white p-8">
+                            <div class="text-6xl mb-4">🎥</div>
+                            <h5 class="text-xl font-bold mb-2">Experiência Imersiva</h5>
+                            <p class="text-white/70 mb-4">Descubra o impacto deste evento</p>
+                            <button class="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-full font-bold transition-all hover:shadow-lg">
+                                ▶️ Assistir Agora
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Informações Adicionais -->
+                    <div class="glass-effect p-6 rounded-2xl">
+                        <h4 class="text-xl font-bold text-white mb-4">ℹ️ Informações Essenciais</h4>
+                        <div id="eventExtraInfo" class="space-y-2 text-white/80"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                    🎯 Quero Participar
+                </button>
+                <button class="glass-effect text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                    📤 Compartilhar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals (mantendo a funcionalidade anterior com novo design) -->
+    <!-- Modal para Voluntário -->
+    <div id="volunteerModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 transform transition-all border border-green-100 shadow-2xl">
+            <h3 class="text-3xl font-bold text-gray-800 mb-4">🙌 Bem-vindo, Herói!</h3>
+            <p class="text-gray-600 mb-6">Obrigado por querer fazer a diferença! Entre em contato:</p>
+            <div class="space-y-4 mb-8">
+                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <p class="text-gray-500 text-sm">Email</p>
+                    <p class="text-gray-800 font-semibold">voluntarios@impacthub.org</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <p class="text-gray-500 text-sm">WhatsApp</p>
+                    <p class="text-gray-800 font-semibold">(11) 9999-8888</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <p class="text-gray-500 text-sm">Endereço</p>
+                    <p class="text-gray-800 font-semibold">Rua da Inovação, 123</p>
+                </div>
+            </div>
+            <button onclick="closeModal('volunteerModal')" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal para Doação -->
+    <div id="donationModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 transform transition-all border border-green-100 shadow-2xl">
+            <h3 class="text-3xl font-bold text-gray-800 mb-4">💝 Sua Generosidade Importa</h3>
+            <p class="text-gray-600 mb-6">Cada contribuição cria ondas de transformação!</p>
+            <div class="space-y-4 mb-8">
+                <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+                    <p class="text-gray-800 font-bold text-lg mb-2">PIX Instantâneo</p>
+                    <p class="text-gray-600">doacoes@impacthub.org</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+                    <p class="text-gray-800 font-bold text-lg mb-2">Transferência Bancária</p>
+                    <p class="text-gray-600 text-sm">Banco: 001 - Banco do Brasil</p>
+                    <p class="text-gray-600 text-sm">Agência: 1234-5 | Conta: 67890-1</p>
+                </div>
+            </div>
+            <button onclick="closeModal('donationModal')" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    
+
+     <!-- CONTATOS PAGE -->
     <div id="contatosPage" class="page">
         <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
             <div class="absolute inset-0 bg-black/10"></div>
@@ -987,45 +1224,13 @@
                         </div>
                     </div>
                     
-                    <div class="slide-in-right">
-                        <div class="morphism rounded-3xl p-12 neon-glow">
-                            <h3 class="text-3xl font-bold text-green-800 mb-8">Envie uma Mensagem</h3>
-                            <p class="text-sm text-gray-500 mb-8 bg-yellow-100 p-3 rounded-xl">⚠️ Demo - Formulário não funcional</p>
-                            <form class="space-y-6">
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nome Completo</label>
-                                    <input type="text" placeholder="Seu nome completo" class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
-                                    <input type="email" placeholder="seu@email.com" class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Assunto</label>
-                                    <select class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50">
-                                        <option>Voluntariado</option>
-                                        <option>Parcerias</option>
-                                        <option>Doações</option>
-                                        <option>Eventos</option>
-                                        <option>Outros</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Mensagem</label>
-                                    <textarea placeholder="Conte-nos como podemos ajudar..." rows="6" class="w-full p-4 rounded-2xl border-2 border-green-200 focus:border-green-500 transition-colors bg-white/50"></textarea>
-                                </div>
-                                <button type="button" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 neon-glow">
-                                    Enviar Mensagem 🚀
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
+      <!-- Footer -->
    <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
@@ -1070,8 +1275,7 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Contato</h4>
                     <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>Av. Cel. Teixeira, 2200B - Ponta Negra
-</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Av. Cel. Teixeira, 2200B - Ponta Negra</p>
                         <p><i class="fas fa-phone mr-2"></i>(92) 99228-0703</p>
                         <p><i class="fab fa-whatsapp mr-2"></i>(92) 99228-0703</p>
                         <p><i class="fas fa-envelope mr-2"></i>filhosdoamazonas@gmail.com</p>
