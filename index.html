@@ -317,19 +317,19 @@
         <div class="absolute top-20 left-10 w-4 h-4 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full opacity-20 floating-animation"></div>
         <div class="absolute top-40 right-20 w-6 h-6 bg-gradient-to-br from-emerald-300 to-green-400 rounded-full opacity-15 floating-animation" style="animation-delay: -2s;"></div>
         <div class="absolute bottom-40 left-1/4 w-3 h-3 bg-gradient-to-br from-green-400 to-teal-400 rounded-full opacity-25 floating-animation" style="animation-delay: -4s;"></div>
-        <div class="absolute top-1/3 right-1/3 w-5 h-5 bg-gradient-to-br from-teal-300 to-green-300 rounded-full opacity-18 floating-animation" style="animation-delay: -1s;"></div>
+        <div class="absolute top-1/3 right-1/3 w-5 h-5 bg-gradient-to-br from-teal-300 to-green-300 rounded-full opacity-30 floating-animation" style="animation-delay: -1s; z-index: none;"></div>
         <div class="absolute top-60 left-1/2 w-2 h-2 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full opacity-30 floating-animation" style="animation-delay: -3s;"></div>
-        <div class="absolute bottom-20 right-1/4 w-4 h-4 bg-gradient-to-br from-green-300 to-emerald-300 rounded-full opacity-22 floating-animation" style="animation-delay: -5s;"></div>
+        <div class="absolute bottom-20 right-1/4 w-4 h-4 bg-gradient-to-br from-green-300 to-emerald-300 rounded-full opacity-30 floating-animation" style="animation-delay: -5s;"></div>
         
         <!-- Gradientes verdes de fundo -->
         <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-100 to-transparent rounded-full opacity-10 blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-emerald-100 to-transparent rounded-full opacity-8 blur-3xl"></div>
-        <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-teal-100 to-transparent rounded-full opacity-12 blur-2xl"></div>
+
+
     </div>
 
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-effect shadow-2xl">
+    <nav class="fixed w-full z-50 bg-black  shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-4">
@@ -341,7 +341,7 @@
                     </div>
                     <div>
                         <h1 class="text-2xl font-black gradient-text">Filhos do Amazonas</h1>
-                        <p class="text-sm text-green-200 font-medium">Preservando Nossa Floresta</p>
+                        <p class="text-sm text-green-400 font-medium">Preservando Nossa Floresta</p>
                     </div>
                 </div>
                 
@@ -404,15 +404,15 @@
                         Filhos do <span class="gradient-text">Amazonas</span>
                     </h1>
                     <p class="text-2xl md:text-3xl mb-12 text-green-100 font-light max-w-4xl mx-auto">
-                        Preservando a maior floresta tropical do mundo através de inovação, tecnologia e amor pela natureza
+                        Preservando a maior floresta tropical do mundo através de inovação, beleza e amor pela natureza
                     </p>
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <button class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105 neon-glow">
+                    <button onclick="showVolunteerForm()" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105 neon-glow">
                         Junte-se à Revolução Verde 🌱
                     </button>
-                    <button class="glass-effect text-white hover:bg-white/20 px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105">
+                    <button href="#missao"  class="glass-effect text-white hover:bg-white/20 px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105">
                         Descubra Nossa Missão
                     </button>
                 </div>
@@ -420,12 +420,12 @@
         </section>
 
         <!-- Arvore Gigante Section -->
-        <section class="py-32 bg-gradient-to-br from-green-50 to-emerald-100 relative overflow-hidden">
+        <section id="missao" class="py-32 bg-gradient-to-br from-green-50 to-emerald-100 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="slide-in-left">
                         <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8 leading-tight">
-                            Nossa <span class="gradient-text">Floresta</span> Gigante
+                            Nossa <span class="gradient-text">Instituição</span> e Atuações
                         </h2>
                         <p class="text-xl text-gray-700 mb-8 leading-relaxed">
                         Somos o Instituto Filhos do Amazonas, uma organização sem fins lucrativos sediada em Manaus,
@@ -437,29 +437,29 @@
                         <div class="space-y-6">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                                    <span class="text-xl text-white">🌳</span>
+                                    <span class="text-xl text-white">⚡</span>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold text-green-800">50.000+ Árvores Protegidas</h3>
-                                    <p class="text-gray-600">Preservação ativa de biodiversidade</p>
+                                    <h3 class="text-xl font-bold text-green-800">WorkShops todos os meses</h3>
+                                    <p class="text-gray-600">Eventos especiais de capacitação, imersão e projetos</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
-                                    <span class="text-xl text-white">💧</span>
+                                    <span class="text-xl text-white">💼</span>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold text-blue-800">1.2M Litros de Água Limpa</h3>
-                                    <p class="text-gray-600">Purificação natural diária</p>
+                                    <h3 class="text-xl font-bold text-blue-800">Eventos profissionais</h3>
+                                    <p class="text-gray-600">Eventos que abrangem diversas áreas da beleza</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
-                                    <span class="text-xl text-white">🦜</span>
+                                    <span class="text-xl text-white">💚</span>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold text-yellow-800">300+ Espécies Protegidas</h3>
-                                    <p class="text-gray-600">Habitat seguro para vida selvagem</p>
+                                    <h3 class="text-xl font-bold text-yellow-800">Sem custo de aprendizado</h3>
+                                    <p class="text-gray-600">Eventos gratuitos e acecíveis a todas as pessoas</p>
                                 </div>
                             </div>
                         </div>
@@ -501,10 +501,10 @@
         </section>
 
         <!-- About Section (Sobre Nós) -->
-        <section class="py-32 bg-white">
+        <section class="py-32 bg-white color">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Sobre Nós - Nossa Missão Inovadora</h2>
+                    <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Sobre Nós - Nossa Missão</h2>
                     <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                         Promover transformação social na Amazônia através da educação, cultura
                         meio ambiente e valorização da beleza, capacitando pessoas e fortalecendo a identidade
@@ -556,8 +556,8 @@
                 <button onclick="showPage('eventos')" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all">
                     Explorar Eventos
                 </button>
-                <button class="glass-effect text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition-all border border-green-200">
-                    Começar Agora
+                <button onclick="showDonationInfo()" class="w-300 glass-effect text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition-all border border-green-200">
+                    Apoiar Nossa Ong
                 </button>
             </div>
         </section>
@@ -575,19 +575,19 @@
                 <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('reflorestamento')">
                     <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
                         <div class="text-center text-white">
-                            <div class="text-6xl mb-2">🌳</div>
-                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                            <div class="text-6xl mb-2"><img class="w-full h-full" src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Workshp%20barberline.jpg?raw=true" alt=""></div>
+
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Reflorestamento Amazônico</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Workshop Barberline</h3>
                         <p class="text-gray-600 text-sm mb-4">Recuperação de áreas degradadas com plantio de espécies nativas</p>
                         <div class="flex justify-between text-sm text-gray-500 mb-4">
                             <span>📍 Reserva Florestal</span>
                             <span>📅 2022 - Atual</span>
                         </div>
                         <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
-                            5.000+ Mudas Plantadas
+                            +100 Participantes
                         </div>
                     </div>
                 </div>
@@ -596,19 +596,19 @@
                 <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('fauna')">
                     <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
                         <div class="text-center text-white">
-                            <div class="text-6xl mb-2">🐆</div>
-                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                            <div class="text-6xl mb-2"><img style="height: 95;" src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Doa%C3%A7%C3%A3o%20de%20cestas.jpg?raw=true" alt=""></div>
+
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Proteção da Fauna</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Doação de Cestas</h3>
                         <p class="text-gray-600 text-sm mb-4">Monitoramento e cuidado dos animais silvestres da região</p>
                         <div class="flex justify-between text-sm text-gray-500 mb-4">
                             <span>📍 Parque Nacional</span>
                             <span>📅 2021 - Atual</span>
                         </div>
                         <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
-                            200+ Animais Protegidos
+                            200+ Cestas Doadas
                         </div>
                     </div>
                 </div>
@@ -617,8 +617,8 @@
                 <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('comunidades')">
                     <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
                         <div class="text-center text-white">
-                            <div class="text-6xl mb-2">🏘️</div>
-                            <p class="text-sm opacity-80">Clique para ver galeria</p>
+                            <div class="text-6xl mb-2"><img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Captura%20de%20tela%202025-09-19%20051432.png?raw=true" alt=""></div>
+
                         </div>
                     </div>
                     <div class="p-6">
@@ -629,7 +629,7 @@
                             <span>📅 2020 - Atual</span>
                         </div>
                         <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
-                            15 Comunidades Atendidas
+                            10 Comunidades Atendidas
                         </div>
                     </div>
                 </div>
@@ -821,33 +821,33 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-20">
                     <h2 class="text-5xl md:text-6xl font-black text-green-800 mb-8">Nossa Amazônia Viva</h2>
-                    <p class="text-2xl text-gray-600">Cada imagem conta uma história de preservação e esperança</p>
+                    <p class="text-2xl text-gray-600">Cada imagem conta uma história da nossa instituição</p>
                 </div>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🌿</span>
+                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%201.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🦋</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%202.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🐆</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%204.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🌺</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%205.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🦜</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Imagem%203.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🐒</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%206.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🌳</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%207.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                     <div class="gallery-item morphism h-64 rounded-3xl flex items-center justify-center neon-glow">
-                        <span class="text-6xl">🦎</span>
+                         <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/imagem%208.jpg?raw=true" alt="" class="w-full h-full" style="border-radius: 20px;">
                     </div>
                 </div>
             </div>
@@ -1237,15 +1237,15 @@
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center">
-                            <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/LOgo%20ong%20-%20Editado.png?raw=true>
+                            <img src="c:\Users\maxwi\Downloads\LOgo ong - Editado.png" alt="" >
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">Filhos do Amazonas</h3>
-                            <p class="text-gray-400 text-sm">ONG Ambiental e Cultural</p>
+                            <h3 class="flex text-lg font-bold">Filhos do Amazonas</h3>
+                            <p class="flex text-gray-400 text-sm">ONG Ambiental e Cultural</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">
-                        Preservando a Amazônia através da cultura e educação, 
+                        Preservando a Amazônia através da cultura e educação,
                         construindo um futuro sustentável para nossa região.
                     </p>
                 </div>
@@ -1987,4 +1987,3 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9805d0c851b3dd50',t:'MTc1ODA4Mjg3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
