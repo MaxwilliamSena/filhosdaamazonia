@@ -307,9 +307,16 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!--ScrownIndicator-->
+    <!--ScrownIndicator -->
 
         <div id="scrollIndicator" class="scroll-indicator"></div>
+
+            <!--ScrownIndicator  2-->
+
+        <div id="scrollIndicator2" class="scroll-indicator"></div>
+                    <!--ScrownIndicator  3-->
+
+        <div id="scrollIndicator3" class="scroll-indicator"></div>
 
         <!-- Floating Particles Background -->
     <div class="fixed inset-0 pointer-events-none">
@@ -333,10 +340,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-4">
-                    <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center neon-glow ">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
-                            <path d="M12 16C12 16 8 18 8 22H16C16 18 12 16 12 16Z"/>
+                    <div class="w-14 h-14 bg- rounded-2xl flex items-center justify-center  ">
+                       <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/LOgo%20ong%20-%20Editado.png?raw=true" alt="">
                         </svg>
                     </div>
                     <div>
@@ -412,15 +417,15 @@
                     <button onclick="showVolunteerForm()" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105 neon-glow">
                         Junte-se à Revolução Verde 🌱
                     </button>
-                    <button href="#missao"  class="glass-effect text-white hover:bg-white/20 px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105">
+                   <a href="#sobre"> <button  class="glass-effect text-white hover:bg-white/20 px-12 py-5 rounded-2xl font-bold text-xl transition-all transform hover:scale-105">
                         Descubra Nossa Missão
-                    </button>
+                    </button></a>
                 </div>
             </div>
         </section>
 
         <!-- Arvore Gigante Section -->
-        <section id="missao" class="py-32 bg-gradient-to-br from-green-50 to-emerald-100 relative overflow-hidden">
+        <section id="sobre" class="py-32 bg-gradient-to-br from-green-50 to-emerald-100 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="slide-in-left">
@@ -572,7 +577,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projeto 1: Reflorestamento -->
-                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('reflorestamento')">
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('barber')">
                     <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
                         <div class="text-center text-white">
                             <div class="text-6xl mb-2"><img class="w-full h-full" src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Workshp%20barberline.jpg?raw=true" alt=""></div>
@@ -593,7 +598,7 @@
                 </div>
 
                 <!-- Projeto 2: Proteção Animal -->
-                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('fauna')">
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage2('doacoes')">
                     <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
                         <div class="text-center text-white">
                             <div class="text-6xl mb-2"><img style="height: 95;" src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Doa%C3%A7%C3%A3o%20de%20cestas.jpg?raw=true" alt=""></div>
@@ -614,7 +619,7 @@
                 </div>
 
                 <!-- Projeto 3: Comunidades -->
-                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('comunidades')">
+                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage3('apoio')">
                     <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
                         <div class="text-center text-white">
                             <div class="text-6xl mb-2"><img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Captura%20de%20tela%202025-09-19%20051432.png?raw=true" alt=""></div>
@@ -735,31 +740,26 @@
                         <div class="glass-effect rounded-3xl p-8">
                             <div id="projectGallery" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <!-- Placeholder para imagens -->
-                                <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center">
+                                <div class="aspect-square rounded-2xl flex items-center justify-center">
                                     <div class="text-center text-white">
-                                        <div class="text-4xl mb-2">📷</div>
-                                        <p class="text-sm">Adicione suas imagens aqui</p>
+                                        <img style="height: 10%;" src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Work%20barber%2011.jpg?raw=true" alt="">
                                     </div>
                                 </div>
-                                <div class="aspect-square bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center">
+                                <div class="aspect-square  rounded-2xl flex items-center justify-center">
                                     <div class="text-center text-white">
-                                        <div class="text-4xl mb-2">🖼️</div>
-                                        <p class="text-sm">Galeria interativa</p>
+                                        <img class="w-full h-full" src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Work%20barber%202.jpg?raw=true" alt="">
                                     </div>
                                 </div>
-                                <div class="aspect-square bg-gradient-to-br from-teal-400 to-cyan-600 rounded-2xl flex items-center justify-center">
+                                <div class="aspect-square  rounded-2xl flex items-center justify-center">
                                     <div class="text-center text-white">
-                                        <div class="text-4xl mb-2">🎨</div>
-                                        <p class="text-sm">Momentos especiais</p>
+                                       <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/Work%20barber%203.jpg?raw=true" alt="">
                                     </div>
                                 </div>
                             </div>
                             
                             <!-- Botão para adicionar imagens -->
                             <div class="mt-8 text-center">
-                                <label for="imageUpload" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold cursor-pointer hover:shadow-lg transition-all inline-block">
-                                    📤 Adicionar Imagens
-                                </label>
+                               
                                 <input type="file" id="imageUpload" multiple accept="image/*" class="hidden" onchange="handleImageUpload(event)">
                             </div>
                         </div>
@@ -814,6 +814,232 @@
         </div>
 
 
+<!--                                                                                         PROJECT PAGE 2                                                                                               -->
+
+
+
+
+               <!-- Página do Projeto (Modal Full Screen) -->
+        <div id="projectPage2" class="fixed inset-0 bg-gradient-to-br from-green-900 to-emerald-900 hidden z-50 overflow-y-auto">
+            <div class="min-h-screen">
+                <!-- Header da Página do Projeto -->
+                <header class="glass-effect sticky top-0 z-10">
+                    <div class="max-w-7xl mx-auto px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="closeProjectPage2()" class="text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-all">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                <div>
+                                    <h1 id="projectPageTitle2" class="text-2xl font-bold text-white"></h1>
+                                    <p class="text-white/70 text-sm">Filhos do Amazonas</p>
+                                </div>
+                            </div>
+                            <button onclick="closeProjectPage2()" class="text-white/60 hover:text-white text-2xl">×</button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Conteúdo da Página do Projeto -->
+                <div class="max-w-7xl mx-auto px-6 py-8">
+                    <!-- Hero do Projeto -->
+                    <div id="projectHero2" class="glass-effect rounded-3xl p-8 mb-8">
+                        <!-- Conteúdo será preenchido dinamicamente -->
+                    </div>
+
+                    <!-- Galeria de Imagens -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📸 Galeria do Projeto</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectGallery2" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Placeholder para imagens -->
+                                <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/doacoes%201.jpg?raw=true" alt="">
+                                    </div>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/doacoes%202.jpg?raw=true" alt="">
+                                    </div>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-teal-400 to-cyan-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/doacoes%203.jpg?raw=true" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Botão para adicionar imagens -->
+                            <div class="mt-8 text-center">
+                             
+                                <input type="file" id="imageUpload" multiple accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição Detalhada do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📋 Sobre o Projeto</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectDescription2" class="prose prose-lg text-white/90 max-w-none">
+                                <!-- Conteúdo será preenchido dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parceiros do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">🤝 Nossos Parceiros</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectPartners2" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                                <!-- Conteúdo será preenchido dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📊 Impacto Gerado</h2>
+                        <div id="projectStats2" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Conteúdo será preenchido dinamicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="text-center">
+                        <div class="glass-effect rounded-3xl p-8">
+                            <h3 class="text-2xl font-bold text-white mb-4">Faça Parte Deste Projeto</h3>
+                            <p class="text-white/80 mb-6">Sua participação pode fazer a diferença na preservação da Amazônia</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onclick="showVolunteerForm()" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                                    🤝 Ser Voluntário
+                                </button>
+                                <button onclick="showDonationInfo()" class="glass-effect text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                                    💚 Apoiar Financeiramente
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+<!--                                                                                         PROJECT PAGE 3                                                                                               -->
+
+
+         <!-- Página do Projeto (Modal Full Screen) -->
+        <div id="projectPage3" class="fixed inset-0 bg-gradient-to-br from-green-900 to-emerald-900 hidden z-50 overflow-y-auto">
+            <div class="min-h-screen">
+                <!-- Header da Página do Projeto -->
+                <header class="glass-effect sticky top-0 z-10">
+                    <div class="max-w-7xl mx-auto px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="closeProjectPage3()" class="text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-all">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                <div>
+                                    <h1 id="projectPageTitle3" class="text-2xl font-bold text-white"></h1>
+                                    <p class="text-white/70 text-sm">Filhos do Amazonas</p>
+                                </div>
+                            </div>
+                            <button onclick="closeProjectPage3()" class="text-white/60 hover:text-white text-2xl">×</button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Conteúdo da Página do Projeto -->
+                <div class="max-w-7xl mx-auto px-6 py-8">
+                    <!-- Hero do Projeto -->
+                    <div id="projectHero3" class="glass-effect rounded-3xl p-8 mb-8">
+                        <!-- Conteúdo será preenchido dinamicamente -->
+                    </div>
+
+                    <!-- Galeria de Imagens -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📸 Galeria do Projeto</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectGallery3" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Placeholder para imagens -->
+                                <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/comunidade%201.jpg?raw=true" alt="">
+                                    </div>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/comunidade%202.jpg?raw=true" alt="">
+                                    </div>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-teal-400 to-cyan-600 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <img src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/comunidade%203.jpg?raw=true" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Botão para adicionar imagens -->
+                            <div class="mt-8 text-center">
+                                
+                                <input type="file" id="imageUpload" multiple accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição Detalhada do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📋 Sobre o Projeto</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectDescription3" class="prose prose-lg text-white/90 max-w-none">
+                                <!-- Conteúdo será preenchido dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parceiros do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">🤝 Nossos Parceiros</h2>
+                        <div class="glass-effect rounded-3xl p-8">
+                            <div id="projectPartners3" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                                <!-- Conteúdo será preenchido dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas do Projeto -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">📊 Impacto Gerado</h2>
+                        <div id="projectStats3" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Conteúdo será preenchido dinamicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="text-center">
+                        <div class="glass-effect rounded-3xl p-8">
+                            <h3 class="text-2xl font-bold text-white mb-4">Faça Parte Deste Projeto</h3>
+                            <p class="text-white/80 mb-6">Sua participação pode fazer a diferença na preservação da Amazônia</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onclick="showVolunteerForm()" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                                    🤝 Ser Voluntário
+                                </button>
+                                <button onclick="showDonationInfo()" class="glass-effect text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                                    💚 Apoiar Financeiramente
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
 
         <!-- Gallery Section -->
@@ -1103,15 +1329,16 @@
             <div class="space-y-4 mb-8">
                 <div class="bg-green-50 p-4 rounded-xl border border-green-100">
                     <p class="text-gray-500 text-sm">Email</p>
-                    <p class="text-gray-800 font-semibold">voluntarios@impacthub.org</p>
+                    <p class="text-gray-800 font-semibold">filhosdoamazonas@gmail.com</p>
                 </div>
                 <div class="bg-green-50 p-4 rounded-xl border border-green-100">
                     <p class="text-gray-500 text-sm">WhatsApp</p>
-                    <p class="text-gray-800 font-semibold">(11) 9999-8888</p>
+                    <p class="text-gray-800 font-semibold">(92) 99228-0703</p>
                 </div>
                 <div class="bg-green-50 p-4 rounded-xl border border-green-100">
                     <p class="text-gray-500 text-sm">Endereço</p>
-                    <p class="text-gray-800 font-semibold">Rua da Inovação, 123</p>
+                    <p class="text-gray-800 font-semibold">Av. Cel. Teixeira, 2200B - Ponta Negra
+</p>
                 </div>
             </div>
             <button onclick="closeModal('volunteerModal')" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 rounded-full font-bold hover:shadow-lg transition-all">
@@ -1128,12 +1355,10 @@
             <div class="space-y-4 mb-8">
                 <div class="bg-green-50 p-6 rounded-xl border border-green-100">
                     <p class="text-gray-800 font-bold text-lg mb-2">PIX Instantâneo</p>
-                    <p class="text-gray-600">doacoes@impacthub.org</p>
+                    <p class="text-gray-600">filhosdoamazonas@gmail.com </p>
                 </div>
                 <div class="bg-green-50 p-6 rounded-xl border border-green-100">
-                    <p class="text-gray-800 font-bold text-lg mb-2">Transferência Bancária</p>
-                    <p class="text-gray-600 text-sm">Banco: 001 - Banco do Brasil</p>
-                    <p class="text-gray-600 text-sm">Agência: 1234-5 | Conta: 67890-1</p>
+                    
                 </div>
             </div>
             <button onclick="closeModal('donationModal')" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 rounded-full font-bold hover:shadow-lg transition-all">
@@ -1422,37 +1647,37 @@
 
         // Dados dos projetos atualizados
         const projectsData = {
-            reflorestamento: {
-                title: "🌳 Reflorestamento Amazônico",
-                description: "Recuperação de áreas degradadas através do plantio de espécies nativas da Amazônia",
+            barber: {
+                title: "Workshop Barberline",
+                description: "WorkShop barberline com em aprendizado na área de barbearia",
                 hero: {
-                    icon: "🌳",
-                    stats: "5.000+ mudas plantadas",
-                    location: "Reserva Florestal",
-                    period: "2022 - Atual"
+                    icon: "💈",
+                    stats: "+ 100 alunos",
+                    location: "Senac Sesc",
+                    period: "2024"
                 },
                 fullDescription: `
-                    <p class="mb-6">O projeto de Reflorestamento Amazônico nasceu da urgente necessidade de recuperar áreas que foram degradadas ao longo dos anos por atividades humanas descontroladas. Nossa missão é devolver à natureza o que foi perdido, plantando espécies nativas cuidadosamente selecionadas.</p>
+                    <p class="mb-6">Aprender a arte da barbearia vai muito além de dominar técnicas de corte. Trata-se de compreender a história e a cultura que moldaram essa profissão, valorizando cada detalhe do ofício. É uma jornada para transformar a paixão em um trabalho minucioso e de alta qualidade.</p>
                     
-                    <p class="mb-6">Trabalhamos em parceria com comunidades locais, biólogos e especialistas em conservação para garantir que cada muda plantada tenha as melhores chances de crescer e prosperar. Utilizamos técnicas sustentáveis e conhecimento tradicional indígena para maximizar o sucesso do reflorestamento.</p>
+                    <p class="mb-6">Este workshop foi cuidadosamente desenhado para te dar as ferramentas e o conhecimento necessários para iniciar essa jornada com o pé direito. Você terá a chance de aprender com um profissional experiente, que vai guiar seus primeiros passos no universo do barbeiro. Adquira a confiança que você precisa para começar a atender seus primeiros clientes.</p>
                     
-                    <p class="mb-6">Até agora, conseguimos plantar mais de 5.000 mudas em 75 hectares de área recuperada, com uma impressionante taxa de sobrevivência de 85%. Cada árvore plantada representa esperança para o futuro da Amazônia e do nosso planeta.</p>
+                    <p class="mb-6">Você irá dominar os segredos por trás de um corte de cabelo preciso e de um acabamento de barba impecável, usando a tesoura e a navalha. Além das técnicas, o curso abordará temas como a importância da biossegurança, do ambiente de trabalho e da relação com o cliente.</p>
                     
-                    <p>O projeto não apenas restaura o ecossistema, mas também gera empregos locais, educa a comunidade sobre conservação e cria corredores ecológicos que permitem a movimentação segura da fauna silvestre.</p>
+                    <p>Ao final do curso, você terá em mãos um certificado que comprova sua participação e o conhecimento adquirido. Mais do que isso, terá uma nova perspectiva sobre a arte da barbearia e a motivação para se dedicar a essa profissão que está em alta no mercado.</p>
                 `,
                 partners: [
-                    { icon: "🏛️", name: "IBAMA" },
-                    { icon: "🌱", name: "SOS Mata Atlântica" },
-                    { icon: "🏢", name: "Petrobras" },
-                    { icon: "🎓", name: "UFAM" },
-                    { icon: "🌍", name: "WWF Brasil" },
-                    { icon: "🏛️", name: "INPA" }
+                    { icon: "🏛️", name: "Sebrae" },
+                    { icon: "🌱", name: "Filhos do Amazonas" },
+                    { icon: "🏢", name: "Governo do estado" },
+                    { icon: "🎓", name: "ManausCult" },
+                    { icon: "🌍", name: "Radio parentes" },
+                    { icon: "🏛️", name: "Mitoso" }
                 ],
                 stats: [
-                    { label: "Mudas Plantadas", value: "5.000+", icon: "🌱" },
-                    { label: "Hectares Recuperados", value: "75", icon: "🌍" },
-                    { label: "Espécies Nativas", value: "25", icon: "🌿" },
-                    { label: "Taxa de Sobrevivência", value: "85%", icon: "📈" }
+                    { label: "Cortes ensinados", value: "+20", icon: "✂️" },
+                    { label: "Alunoa participantes", value: "+100", icon: "👨‍🎓" },
+                    { label: "Técnicas ensinadas", value: "+15", icon: "💈" },
+                    { label: "De melhoria no aprendizado", value: "85%", icon: "📈" }
                 ]
             },
             fauna: {
@@ -1463,6 +1688,7 @@
                     stats: "200+ animais protegidos",
                     location: "Parque Nacional",
                     period: "2021 - Atual"
+
                 },
                 fullDescription: `
                     <p class="mb-6">A Proteção da Fauna Amazônica é um dos nossos projetos mais importantes e desafiadores. A Amazônia abriga cerca de 10% de toda a biodiversidade mundial, e muitas espécies estão ameaçadas pela perda de habitat e atividades humanas.</p>
@@ -1615,13 +1841,14 @@
                 ],
                 stats: [
                     { label: "Produtores Capacitados", value: "300+", icon: "👨‍🌾" },
-                    { label: "Hectares Orgânicos", value: "150", icon: "🌾" },
-                    { label: "Tipos de Cultivo", value: "12", icon: "🥕" },
-                    { label: "Aumento da Produção", value: "35%", icon: "📊" }
+                    { label: "Alunos participando", value: "100", icon: "🌾" },
+                    { label: "Tipos de tecnicas", value: "+12", icon: "🥕" },
+                    { label: "De melhoria no aprendizado", value: "95%", icon: "📊" }
                 ]
             }
         };
 
+        
         function openProjectPage(projectId) {
             const project = projectsData[projectId];
             if (!project) return;
@@ -1824,7 +2051,841 @@
             document.getElementById(modalId).classList.remove('flex');
         }
 
-        // Dados dos eventos amazônicos
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ // Scroll Indicator 2
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator2').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Dados dos projetos atualizados
+        const projectsData2 = {
+            reflorestamento: {
+                title: "Workshop Barberline",
+                description: "WorkShop barberline com em aprendizado na área de barbearia",
+                hero: {
+                    icon: "💈",
+                    stats: "+ 100 alunos",
+                    location: "Senac Sesc",
+                    period: "2024"
+                },
+                fullDescription: `
+                    <p class="mb-6">Aprender a arte da barbearia vai muito além de dominar técnicas de corte. Trata-se de compreender a história e a cultura que moldaram essa profissão, valorizando cada detalhe do ofício. É uma jornada para transformar a paixão em um trabalho minucioso e de alta qualidade.</p>
+                    
+                    <p class="mb-6">Este workshop foi cuidadosamente desenhado para te dar as ferramentas e o conhecimento necessários para iniciar essa jornada com o pé direito. Você terá a chance de aprender com um profissional experiente, que vai guiar seus primeiros passos no universo do barbeiro. Adquira a confiança que você precisa para começar a atender seus primeiros clientes.</p>
+                    
+                    <p class="mb-6">Você irá dominar os segredos por trás de um corte de cabelo preciso e de um acabamento de barba impecável, usando a tesoura e a navalha. Além das técnicas, o curso abordará temas como a importância da biossegurança, do ambiente de trabalho e da relação com o cliente.</p>
+                    
+                    <p>Ao final do curso, você terá em mãos um certificado que comprova sua participação e o conhecimento adquirido. Mais do que isso, terá uma nova perspectiva sobre a arte da barbearia e a motivação para se dedicar a essa profissão que está em alta no mercado.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "IBAMA" },
+                    { icon: "🌱", name: "SOS Mata Atlântica" },
+                    { icon: "🏢", name: "Petrobras" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌍", name: "WWF Brasil" },
+                    { icon: "🏛️", name: "INPA" }
+                ],
+                stats: [
+                    { label: "Mudas Plantadas", value: "5.000+", icon: "🌱" },
+                    { label: "Hectares Recuperados", value: "75", icon: "🌍" },
+                    { label: "Espécies Nativas", value: "25", icon: "🌿" },
+                    { label: "Taxa de Sobrevivência", value: "85%", icon: "📈" }
+                ]
+            },
+            doacoes: {
+                title: "Doações de cestas",
+                description: "Entrega de cestas basicas para familias carentes",
+                hero: {
+                    icon: "👨‍👩‍👧‍👦",
+                    stats: "+200 Cestas doadas",
+                    location: "Diversos lugares",
+                    period: "Todos os meses"
+
+                },
+                fullDescription: `
+                    <p class="mb-6">A doação de cestas básicas emerge como uma das formas mais diretas de combate à insegurança alimentar. Ela garante que famílias em situação de vulnerabilidade tenham acesso a itens essenciais de nutrição. Essa ação é um pilar fundamental para mitigar a fome e oferecer um alívio imediato a quem mais precisa.</p>
+                    
+                    <p class="mb-6">Nosso projeto se baseia na mobilização da comunidade para arrecadar alimentos e produtos de higiene. Transformamos a generosidade de uns na esperança de muitos, montando cestas repletas de dignidade e cuidado. A entrega é feita de forma organizada e segura, chegando diretamente às mãos de quem mais necessita.</p>
+                    
+                    <p class="mb-6">Cada cesta básica doada vai além do seu valor material, representando um gesto de solidariedade e de apoio. Ela fortalece o tecido social, mostrando que a empatia e a compaixão podem construir uma sociedade mais justa. A sua contribuição se traduz em um futuro mais seguro para diversas famílias.</p>
+                    
+                    <p>Convidamos você a fazer parte dessa corrente do bem e a ser um agente de transformação em sua comunidade. Junte-se a nós para levar alimento e esperança para as famílias que estão em situação de vulnerabilidade. Com a sua ajuda, podemos fazer a diferença.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "Sebrae" },
+                    { icon: "🌱", name: "Filhos do Amazonas" },
+                    { icon: "🏢", name: "Governo do estado" },
+                    { icon: "🎓", name: "ManausCult" },
+                    { icon: "🌍", name: "Radio parentes" },
+                    { icon: "🏛️", name: "Mitoso" }
+                ],
+                stats: [
+                    { label: "De impacto nas famílias", value: "100%", icon: "🔍" },
+                    { label: "Pessoas participando", value: "+100", icon: "🙋‍♀️🙋‍♂️" },
+                    { label: "Famílias atendidas", value: "+200", icon: "👨‍👩‍👧‍👦" },
+                    { label: "Em cestas", value: "+5000", icon: "💚" }
+                ]
+            },
+            comunidades: {
+                title: "🏘️ Apoio às Comunidades",
+                description: "Desenvolvimento sustentável e capacitação das comunidades locais",
+                hero: {
+                    icon: "🏘️",
+                    stats: "15 comunidades atendidas",
+                    location: "Aldeias Indígenas",
+                    period: "2020 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">O projeto de Apoio às Comunidades reconhece que a preservação da Amazônia só é possível com o envolvimento e bem-estar das pessoas que vivem na região. Trabalhamos diretamente com 15 comunidades indígenas e ribeirinhas para promover desenvolvimento sustentável.</p>
+                    
+                    <p class="mb-6">Oferecemos capacitação em técnicas sustentáveis de agricultura, pesca responsável, artesanato tradicional e gestão de recursos naturais. Também apoiamos a criação de cooperativas que permitem às comunidades comercializar seus produtos de forma justa.</p>
+                    
+                    <p class="mb-6">Nosso trabalho resultou em um aumento médio de 40% na renda das famílias participantes, além de fortalecer a cultura local e promover a autonomia das comunidades. Já formamos 8 cooperativas que atendem mais de 450 famílias.</p>
+                    
+                    <p>Acreditamos que quando as comunidades locais prosperam de forma sustentável, elas se tornam os melhores guardiões da floresta, protegendo naturalmente o meio ambiente para as futuras gerações.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "Sebrae" },
+                    { icon: "🌱", name: "Filhos do Amazonas" },
+                    { icon: "🏢", name: "Governo do estado" },
+                    { icon: "🎓", name: "ManausCult" },
+                    { icon: "🌍", name: "Radio parentes" },
+                    { icon: "🏛️", name: "Mitoso" }
+                ],
+                stats: [
+                    { label: "Comunidades", value: "15", icon: "🏘️" },
+                    { label: "Famílias Beneficiadas", value: "450", icon: "👨‍👩‍👧‍👦" },
+                    { label: "Cooperativas", value: "8", icon: "🏢" },
+                    { label: "Aumento de Renda", value: "40%", icon: "💰" }
+                ]
+            },
+            rios: {
+                title: "💧 Preservação dos Rios",
+                description: "Limpeza e monitoramento da qualidade da água dos rios amazônicos",
+                hero: {
+                    icon: "💧",
+                    stats: "50km de rio limpo",
+                    location: "Rio Amazonas",
+                    period: "2023 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">Os rios da Amazônia são as artérias vitais da floresta, fornecendo água limpa, transporte e sustento para milhões de pessoas e incontáveis espécies. Nosso projeto de Preservação dos Rios foca na limpeza e monitoramento contínuo da qualidade da água.</p>
+                    
+                    <p class="mb-6">Utilizamos tecnologia de ponta para monitorar a qualidade da água em tempo real, identificando poluentes e fontes de contaminação. Nossa equipe realiza limpezas regulares, removendo lixo e detritos que ameaçam o ecossistema aquático.</p>
+                    
+                    <p class="mb-6">Já conseguimos limpar 50 quilômetros de rios, removendo mais de 12 toneladas de lixo e melhorando a qualidade da água em 65%. Instalamos 8 estações de monitoramento que fornecem dados em tempo real sobre a saúde dos rios.</p>
+                    
+                    <p>Trabalhamos em parceria com pescadores locais, que se tornaram nossos aliados na proteção dos rios. Eles nos ajudam a identificar problemas e participam ativamente das ações de limpeza e conservação.</p>
+                `,
+                partners: [
+                    { icon: "💧", name: "ANA" },
+                    { icon: "🏛️", name: "IBAMA" },
+                    { icon: "🎣", name: "Colônia de Pescadores" },
+                    { icon: "🏢", name: "Sabesp" },
+                    { icon: "🎓", name: "INPA" },
+                    { icon: "🌊", name: "SOS Rios" }
+                ],
+                stats: [
+                    { label: "Km de Rio Limpo", value: "50", icon: "🌊" },
+                    { label: "Toneladas de Lixo", value: "12", icon: "♻️" },
+                    { label: "Estações de Monitoramento", value: "8", icon: "📡" },
+                    { label: "Melhoria da Qualidade", value: "65%", icon: "📈" }
+                ]
+            },
+            educacao: {
+                title: "📚 Educação Ambiental",
+                description: "Conscientização e formação de novos guardiões da natureza",
+                hero: {
+                    icon: "📚",
+                    stats: "1.200+ crianças impactadas",
+                    location: "Escolas Rurais",
+                    period: "2022 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Educação Ambiental é a base para um futuro sustentável. Acreditamos que ao educar as crianças de hoje, estamos formando os guardiões da Amazônia de amanhã. Nosso programa atende escolas rurais em toda a região amazônica.</p>
+                    
+                    <p class="mb-6">Desenvolvemos material didático especial, adaptado à realidade local, que combina conhecimento científico com sabedoria tradicional. Nossas atividades incluem teatro ambiental, oficinas práticas, concursos de desenho e visitas à floresta.</p>
+                    
+                    <p class="mb-6">Já impactamos mais de 1.200 crianças em 20 escolas diferentes. Também capacitamos 45 professores para que possam continuar o trabalho de educação ambiental mesmo após nossa visita. Distribuímos mais de 2.000 materiais educativos.</p>
+                    
+                    <p>O programa não se limita às crianças - envolvemos toda a família e a comunidade, criando uma rede de conscientização que se expande naturalmente, multiplicando o impacto de nossas ações.</p>
+                `,
+                partners: [
+                    { icon: "🏫", name: "Secretaria de Educação" },
+                    { icon: "📚", name: "MEC" },
+                    { icon: "🎭", name: "Grupo Teatral Verde" },
+                    { icon: "🎨", name: "Instituto Arte Ambiental" },
+                    { icon: "🏢", name: "Fundação Bradesco" },
+                    { icon: "📖", name: "Editora Saraiva" }
+                ],
+                stats: [
+                    { label: "Crianças Impactadas", value: "1.200+", icon: "👶" },
+                    { label: "Escolas Visitadas", value: "20", icon: "🏫" },
+                    { label: "Professores Capacitados", value: "45", icon: "👩‍🏫" },
+                    { label: "Material Distribuído", value: "2.000", icon: "📚" }
+                ]
+            },
+            agricultura: {
+                title: "🌾 Agricultura Sustentável",
+                description: "Técnicas ecológicas para produção responsável e sustentável",
+                hero: {
+                    icon: "🌾",
+                    stats: "300+ produtores capacitados",
+                    location: "Cooperativas Locais",
+                    period: "2021 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Agricultura Sustentável é fundamental para conciliar produção de alimentos com preservação ambiental. Nosso projeto capacita produtores rurais em técnicas que aumentam a produtividade sem agredir o meio ambiente.</p>
+                    
+                    <p class="mb-6">Ensinamos métodos como agricultura orgânica, sistemas agroflorestais, compostagem, controle biológico de pragas e rotação de culturas. Também apoiamos a certificação orgânica dos produtos, agregando valor à produção local.</p>
+                    
+                    <p class="mb-6">Já capacitamos mais de 300 produtores que cultivam 150 hectares de forma orgânica. Conseguimos aumentar a produtividade em 35% enquanto reduzimos o uso de agrotóxicos em 90%. Apoiamos 12 tipos diferentes de cultivo sustentável.</p>
+                    
+                    <p>Criamos uma feira de produtos orgânicos que conecta produtores diretamente aos consumidores, garantindo preços justos e produtos frescos. O projeto gera renda sustentável enquanto preserva o solo e a biodiversidade local.</p>
+                `,
+                partners: [
+                    { icon: "🌱", name: "EMBRAPA" },
+                    { icon: "🏢", name: "SEBRAE" },
+                    { icon: "🏛️", name: "INCRA" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌾", name: "Cooperativa Orgânica" },
+                    { icon: "🏪", name: "Feira Orgânica" }
+                ],
+                stats: [
+                    { label: "Produtores Capacitados", value: "300+", icon: "👨‍🌾" },
+                    { label: "Hectares Orgânicos", value: "150", icon: "🌾" },
+                    { label: "Tipos de Cultivo", value: "12", icon: "🥕" },
+                    { label: "Aumento da Produção", value: "35%", icon: "📊" }
+                ]
+            }
+        };
+
+        
+        function openProjectPage2(projectId) {
+            const project = projectsData2[projectId];
+            if (!project) return;
+
+            // Preencher título
+            document.getElementById('projectPageTitle2').textContent = project.title;
+
+            // Preencher hero
+            document.getElementById('projectHero2').innerHTML = `
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="text-center lg:text-left flex-1">
+                        <div class="text-8xl mb-4">${project.hero.icon}</div>
+                        <h2 class="text-4xl font-bold text-white mb-4">${project.title}</h2>
+                        <p class="text-xl text-white/80 mb-6">${project.description}</p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="glass-effect px-4 py-2 rounded-full">
+                                <span class="text-white/60 text-sm">📍 ${project.hero.location}</span>
+                            </div>
+                            <div class="glass-effect px-4 py-2 rounded-full">
+                                <span class="text-white/60 text-sm">📅 ${project.hero.period}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-6 rounded-3xl">
+                            <div class="text-3xl font-bold mb-2">${project.hero.stats}</div>
+                            <p class="text-sm opacity-80">Impacto Atual</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Preencher descrição completa
+            document.getElementById('projectDescription2').innerHTML = project.fullDescription;
+
+            // Preencher parceiros
+            document.getElementById('projectPartners2').innerHTML = project.partners.map(partner => `
+                <div class="glass-effect p-4 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">${partner.icon}</div>
+                    <p class="text-white/80 text-sm font-semibold">${partner.name}</p>
+                </div>
+            `).join('');
+
+            // Preencher estatísticas
+            document.getElementById('projectStats2').innerHTML = project.stats.map(stat => `
+                <div class="glass-effect p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-3">${stat.icon}</div>
+                    <div class="text-2xl font-bold text-white mb-2">${stat.value}</div>
+                    <p class="text-white/70 text-sm">${stat.label}</p>
+                </div>
+            `).join('');
+
+            // Mostrar página
+            document.getElementById('projectPage2').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectPage2() {
+            document.getElementById('projectPage2').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addComment() {
+            const name = document.getElementById('commentName').value.trim();
+            const email = document.getElementById('commentEmail').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+
+            if (!name || !email || !text) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            // Criar novo comentário
+            const commentsList = document.getElementById('commentsList');
+            const newComment = document.createElement('div');
+            newComment.className = 'glass-effect p-6 rounded-2xl';
+            
+            const initial = name.charAt(0).toUpperCase();
+            const colors = ['from-green-400 to-emerald-500', 'from-blue-400 to-teal-500', 'from-purple-400 to-pink-500', 'from-orange-400 to-red-500'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            newComment.innerHTML = `
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br ${randomColor} rounded-full flex items-center justify-center text-white font-bold">
+                        ${initial}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <h4 class="font-semibold text-white">${name}</h4>
+                            <span class="text-white/60 text-sm">• agora</span>
+                        </div>
+                        <p class="text-white/90">${text}</p>
+                    </div>
+                </div>
+            `;
+
+            // Adicionar no topo da lista
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+
+            // Limpar formulário
+            document.getElementById('commentName').value = '';
+            document.getElementById('commentEmail').value = '';
+            document.getElementById('commentText').value = '';
+
+            // Mostrar mensagem de sucesso
+            const button = document.querySelector('button[onclick="addComment()"]');
+            const originalText = button.textContent;
+            button.textContent = '✅ Comentário Publicado!';
+            button.style.background = 'linear-gradient(to right, #10b981, #059669)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
+
+        function handleImageUpload(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('projectGallery');
+            
+            // Limpar placeholders
+            gallery.innerHTML = '';
+            
+            Array.from(files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform';
+                        imageDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="Projeto ${index + 1}" class="w-full h-full object-cover" onclick="openImageModal('${e.target.result}')">
+                        `;
+                        gallery.appendChild(imageDiv);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Adicionar botão para mais imagens
+            const addMoreDiv = document.createElement('div');
+            addMoreDiv.className = 'aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center cursor-pointer hover:scale-105 transition-transform';
+            addMoreDiv.innerHTML = `
+                <label for="moreImages" class="text-center text-white cursor-pointer">
+                    <div class="text-4xl mb-2">➕</div>
+                    <p class="text-sm">Adicionar mais</p>
+                </label>
+                <input type="file" id="moreImages" multiple accept="image/*" class="hidden" onchange="addMoreImages(event)">
+            `;
+            gallery.appendChild(addMoreDiv);
+        }
+
+        function addMoreImages(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('projectGallery');
+            const addButton = gallery.lastElementChild;
+            
+            Array.from(files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform';
+                        imageDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="Nova imagem ${index + 1}" class="w-full h-full object-cover" onclick="openImageModal('${e.target.result}')">
+                        `;
+                        gallery.insertBefore(imageDiv, addButton);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        function openImageModal(imageSrc) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="max-w-4xl max-h-full relative">
+                    <img src="${imageSrc}" alt="Imagem ampliada" class="max-w-full max-h-full object-contain rounded-2xl">
+                    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center">×</button>
+                </div>
+            `;
+            modal.onclick = function(e) {
+                if (e.target === modal) modal.remove();
+            };
+            document.body.appendChild(modal);
+        }
+
+        function showVolunteerForm() {
+            document.getElementById('volunteerModal').classList.remove('hidden');
+            document.getElementById('volunteerModal').classList.add('flex');
+        }
+
+        function showDonationInfo() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.getElementById('donationModal').classList.add('flex');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.getElementById(modalId).classList.remove('flex');
+        }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Scroll Indicator 3
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator3').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Dados dos projetos atualizados
+        const projectsData3 = {
+            reflorestamento: {
+                title: "Workshop Barberline",
+                description: "WorkShop barberline com em aprendizado na área de barbearia",
+                hero: {
+                    icon: "💈",
+                    stats: "+ 100 alunos",
+                    location: "Senac Sesc",
+                    period: "2024"
+                },
+                fullDescription: `
+                    <p class="mb-6">Aprender a arte da barbearia vai muito além de dominar técnicas de corte. Trata-se de compreender a história e a cultura que moldaram essa profissão, valorizando cada detalhe do ofício. É uma jornada para transformar a paixão em um trabalho minucioso e de alta qualidade.</p>
+                    
+                    <p class="mb-6">Este workshop foi cuidadosamente desenhado para te dar as ferramentas e o conhecimento necessários para iniciar essa jornada com o pé direito. Você terá a chance de aprender com um profissional experiente, que vai guiar seus primeiros passos no universo do barbeiro. Adquira a confiança que você precisa para começar a atender seus primeiros clientes.</p>
+                    
+                    <p class="mb-6">Você irá dominar os segredos por trás de um corte de cabelo preciso e de um acabamento de barba impecável, usando a tesoura e a navalha. Além das técnicas, o curso abordará temas como a importância da biossegurança, do ambiente de trabalho e da relação com o cliente.</p>
+                    
+                    <p>Ao final do curso, você terá em mãos um certificado que comprova sua participação e o conhecimento adquirido. Mais do que isso, terá uma nova perspectiva sobre a arte da barbearia e a motivação para se dedicar a essa profissão que está em alta no mercado.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "IBAMA" },
+                    { icon: "🌱", name: "SOS Mata Atlântica" },
+                    { icon: "🏢", name: "Petrobras" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌍", name: "WWF Brasil" },
+                    { icon: "🏛️", name: "INPA" }
+                ],
+                stats: [
+                    { label: "Mudas Plantadas", value: "5.000+", icon: "🌱" },
+                    { label: "Hectares Recuperados", value: "75", icon: "🌍" },
+                    { label: "Espécies Nativas", value: "25", icon: "🌿" },
+                    { label: "Taxa de Sobrevivência", value: "85%", icon: "📈" }
+                ]
+            },
+            doacoes: {
+                title: "🐆 Proteção da Fauna",
+                description: "Monitoramento e proteção dos animais silvestres da região amazônica",
+                hero: {
+                    icon: "🐆",
+                    stats: "200+ animais protegidos",
+                    location: "Parque Nacional",
+                    period: "2021 - Atual"
+
+                },
+                fullDescription: `
+                    <p class="mb-6">A Proteção da Fauna Amazônica é um dos nossos projetos mais importantes e desafiadores. A Amazônia abriga cerca de 10% de toda a biodiversidade mundial, e muitas espécies estão ameaçadas pela perda de habitat e atividades humanas.</p>
+                    
+                    <p class="mb-6">Nossa equipe de biólogos e veterinários trabalha 24 horas por dia monitorando a vida selvagem através de câmeras de alta tecnologia, coleiras de rastreamento e observação direta. Quando encontramos animais feridos ou em perigo, nossa equipe de resgate entra em ação.</p>
+                    
+                    <p class="mb-6">Já conseguimos resgatar e reabilitar mais de 200 animais, incluindo onças-pintadas, araras, preguiças e dezenas de outras espécies. Nossa taxa de recuperação é de 92%, uma das mais altas do país.</p>
+                    
+                    <p>Além do resgate, trabalhamos na educação das comunidades locais sobre a importância da conservação e na criação de corredores ecológicos que permitem a movimentação segura dos animais.</p>
+                `,
+                partners: [
+                    { icon: "🏥", name: "CETAS" },
+                    { icon: "🐾", name: "Instituto Onça" },
+                    { icon: "🦜", name: "Projeto Arara Azul" },
+                    { icon: "🏛️", name: "ICMBio" },
+                    { icon: "🎓", name: "INPA" },
+                    { icon: "🌍", name: "Panthera" }
+                ],
+                stats: [
+                    { label: "Animais Protegidos", value: "200+", icon: "🐾" },
+                    { label: "Espécies Monitoradas", value: "45", icon: "🔍" },
+                    { label: "Resgates Realizados", value: "80", icon: "🚑" },
+                    { label: "Taxa de Recuperação", value: "92%", icon: "💚" }
+                ]
+            },
+            apoio: {
+                title: "🏘️ Apoio às Comunidades",
+                description: "Desenvolvimento sustentável e capacitação das comunidades locais",
+                hero: {
+                    icon: "🏘️",
+                    stats: "15 comunidades atendidas",
+                    location: "Aldeias Indígenas",
+                    period: "2020 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">Visitar comunidades indígenas é uma oportunidade única de se conectar com culturas ricas e milenares, para além dos estereótipos. É uma chance de aprender diretamente com povos que detêm saberes ancestrais, valorizando suas tradições e sua história. O objetivo não é apenas ver, mas sim compreender e respeitar o modo de vida deles.</p>
+                    
+                    <p class="mb-6">Ao adentrar esses territórios, o visitante é convidado a uma imersão de aprendizado, com a humildade de um convidado. É fundamental seguir as regras da comunidade e respeitar suas práticas, do silêncio sagrado à participação em rituais. A experiência se constrói na troca mútua e no respeito, criando laços de confiança.</p>
+                    
+                    <p class="mb-6">A visita consciente contribui diretamente para a economia e autonomia dessas comunidades, apoiando a manutenção de seus projetos sustentáveis. Essa interação ajuda a preservar sua cultura, sua língua e suas terras ancestrais, ameaçadas pelo avanço da sociedade moderna. Assim, a visita se torna um ato de apoio e não apenas de curiosidade.</p>
+                    
+                    <p>Portanto, ao planejar uma viagem, procure projetos de etnoturismo que sejam liderados pelas próprias comunidades, com guias indígenas. Essa é a melhor forma de garantir que sua presença seja benéfica e respeitosa. Visitar é um ato de responsabilidade que fortalece a luta desses povos pela sua existência.</p>
+                `,
+                partners: [
+                    { icon: "🏛️", name: "Sebrae" },
+                    { icon: "🌱", name: "Filhos do Amazonas" },
+                    { icon: "🏢", name: "Governo do estado" },
+                    { icon: "🎓", name: "ManausCult" },
+                    { icon: "🌍", name: "Radio parentes" },
+                    { icon: "🏛️", name: "Mitoso" }
+                ],
+                stats: [
+                    { label: "Comunidades atendidas", value: "10", icon: "🏘️" },
+                    { label: "Famílias Beneficiadas", value: "450", icon: "👨‍👩‍👧‍👦" },
+                    { label: "Cooperativas", value: "8", icon: "🏢" },
+                    { label: "Aumento de Renda", value: "40%", icon: "💰" }
+                ]
+            },
+            rios: {
+                title: "💧 Preservação dos Rios",
+                description: "Limpeza e monitoramento da qualidade da água dos rios amazônicos",
+                hero: {
+                    icon: "💧",
+                    stats: "50km de rio limpo",
+                    location: "Rio Amazonas",
+                    period: "2023 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">Os rios da Amazônia são as artérias vitais da floresta, fornecendo água limpa, transporte e sustento para milhões de pessoas e incontáveis espécies. Nosso projeto de Preservação dos Rios foca na limpeza e monitoramento contínuo da qualidade da água.</p>
+                    
+                    <p class="mb-6">Utilizamos tecnologia de ponta para monitorar a qualidade da água em tempo real, identificando poluentes e fontes de contaminação. Nossa equipe realiza limpezas regulares, removendo lixo e detritos que ameaçam o ecossistema aquático.</p>
+                    
+                    <p class="mb-6">Já conseguimos limpar 50 quilômetros de rios, removendo mais de 12 toneladas de lixo e melhorando a qualidade da água em 65%. Instalamos 8 estações de monitoramento que fornecem dados em tempo real sobre a saúde dos rios.</p>
+                    
+                    <p>Trabalhamos em parceria com pescadores locais, que se tornaram nossos aliados na proteção dos rios. Eles nos ajudam a identificar problemas e participam ativamente das ações de limpeza e conservação.</p>
+                `,
+                partners: [
+                    { icon: "💧", name: "ANA" },
+                    { icon: "🏛️", name: "IBAMA" },
+                    { icon: "🎣", name: "Colônia de Pescadores" },
+                    { icon: "🏢", name: "Sabesp" },
+                    { icon: "🎓", name: "INPA" },
+                    { icon: "🌊", name: "SOS Rios" }
+                ],
+                stats: [
+                    { label: "Km de Rio Limpo", value: "50", icon: "🌊" },
+                    { label: "Toneladas de Lixo", value: "12", icon: "♻️" },
+                    { label: "Estações de Monitoramento", value: "8", icon: "📡" },
+                    { label: "Melhoria da Qualidade", value: "65%", icon: "📈" }
+                ]
+            },
+            educacao: {
+                title: "📚 Educação Ambiental",
+                description: "Conscientização e formação de novos guardiões da natureza",
+                hero: {
+                    icon: "📚",
+                    stats: "1.200+ crianças impactadas",
+                    location: "Escolas Rurais",
+                    period: "2022 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Educação Ambiental é a base para um futuro sustentável. Acreditamos que ao educar as crianças de hoje, estamos formando os guardiões da Amazônia de amanhã. Nosso programa atende escolas rurais em toda a região amazônica.</p>
+                    
+                    <p class="mb-6">Desenvolvemos material didático especial, adaptado à realidade local, que combina conhecimento científico com sabedoria tradicional. Nossas atividades incluem teatro ambiental, oficinas práticas, concursos de desenho e visitas à floresta.</p>
+                    
+                    <p class="mb-6">Já impactamos mais de 1.200 crianças em 20 escolas diferentes. Também capacitamos 45 professores para que possam continuar o trabalho de educação ambiental mesmo após nossa visita. Distribuímos mais de 2.000 materiais educativos.</p>
+                    
+                    <p>O programa não se limita às crianças - envolvemos toda a família e a comunidade, criando uma rede de conscientização que se expande naturalmente, multiplicando o impacto de nossas ações.</p>
+                `,
+                partners: [
+                    { icon: "🏫", name: "Secretaria de Educação" },
+                    { icon: "📚", name: "MEC" },
+                    { icon: "🎭", name: "Grupo Teatral Verde" },
+                    { icon: "🎨", name: "Instituto Arte Ambiental" },
+                    { icon: "🏢", name: "Fundação Bradesco" },
+                    { icon: "📖", name: "Editora Saraiva" }
+                ],
+                stats: [
+                    { label: "Crianças Impactadas", value: "1.200+", icon: "👶" },
+                    { label: "Escolas Visitadas", value: "20", icon: "🏫" },
+                    { label: "Professores Capacitados", value: "45", icon: "👩‍🏫" },
+                    { label: "Material Distribuído", value: "2.000", icon: "📚" }
+                ]
+            },
+            agricultura: {
+                title: "🌾 Agricultura Sustentável",
+                description: "Técnicas ecológicas para produção responsável e sustentável",
+                hero: {
+                    icon: "🌾",
+                    stats: "300+ produtores capacitados",
+                    location: "Cooperativas Locais",
+                    period: "2021 - Atual"
+                },
+                fullDescription: `
+                    <p class="mb-6">A Agricultura Sustentável é fundamental para conciliar produção de alimentos com preservação ambiental. Nosso projeto capacita produtores rurais em técnicas que aumentam a produtividade sem agredir o meio ambiente.</p>
+                    
+                    <p class="mb-6">Ensinamos métodos como agricultura orgânica, sistemas agroflorestais, compostagem, controle biológico de pragas e rotação de culturas. Também apoiamos a certificação orgânica dos produtos, agregando valor à produção local.</p>
+                    
+                    <p class="mb-6">Já capacitamos mais de 300 produtores que cultivam 150 hectares de forma orgânica. Conseguimos aumentar a produtividade em 35% enquanto reduzimos o uso de agrotóxicos em 90%. Apoiamos 12 tipos diferentes de cultivo sustentável.</p>
+                    
+                    <p>Criamos uma feira de produtos orgânicos que conecta produtores diretamente aos consumidores, garantindo preços justos e produtos frescos. O projeto gera renda sustentável enquanto preserva o solo e a biodiversidade local.</p>
+                `,
+                partners: [
+                    { icon: "🌱", name: "EMBRAPA" },
+                    { icon: "🏢", name: "SEBRAE" },
+                    { icon: "🏛️", name: "INCRA" },
+                    { icon: "🎓", name: "UFAM" },
+                    { icon: "🌾", name: "Cooperativa Orgânica" },
+                    { icon: "🏪", name: "Feira Orgânica" }
+                ],
+                stats: [
+                    { label: "Produtores Capacitados", value: "300+", icon: "👨‍🌾" },
+                    { label: "Hectares Orgânicos", value: "150", icon: "🌾" },
+                    { label: "Tipos de Cultivo", value: "12", icon: "🥕" },
+                    { label: "Aumento da Produção", value: "35%", icon: "📊" }
+                ]
+            }
+        };
+
+        
+        function openProjectPage3(projectId) {
+            const project = projectsData3[projectId];
+            if (!project) return;
+
+            // Preencher título
+            document.getElementById('projectPageTitle3').textContent = project.title;
+
+            // Preencher hero
+            document.getElementById('projectHero3').innerHTML = `
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="text-center lg:text-left flex-1">
+                        <div class="text-8xl mb-4">${project.hero.icon}</div>
+                        <h2 class="text-4xl font-bold text-white mb-4">${project.title}</h2>
+                        <p class="text-xl text-white/80 mb-6">${project.description}</p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="glass-effect px-4 py-2 rounded-full">
+                                <span class="text-white/60 text-sm">📍 ${project.hero.location}</span>
+                            </div>
+                            <div class="glass-effect px-4 py-2 rounded-full">
+                                <span class="text-white/60 text-sm">📅 ${project.hero.period}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-6 rounded-3xl">
+                            <div class="text-3xl font-bold mb-2">${project.hero.stats}</div>
+                            <p class="text-sm opacity-80">Impacto Atual</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Preencher descrição completa
+            document.getElementById('projectDescription3').innerHTML = project.fullDescription;
+
+            // Preencher parceiros
+            document.getElementById('projectPartners3').innerHTML = project.partners.map(partner => `
+                <div class="glass-effect p-4 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">${partner.icon}</div>
+                    <p class="text-white/80 text-sm font-semibold">${partner.name}</p>
+                </div>
+            `).join('');
+
+            // Preencher estatísticas
+            document.getElementById('projectStats3').innerHTML = project.stats.map(stat => `
+                <div class="glass-effect p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-3">${stat.icon}</div>
+                    <div class="text-2xl font-bold text-white mb-2">${stat.value}</div>
+                    <p class="text-white/70 text-sm">${stat.label}</p>
+                </div>
+            `).join('');
+
+            // Mostrar página
+            document.getElementById('projectPage3').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectPage3() {
+            document.getElementById('projectPage3').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addComment() {
+            const name = document.getElementById('commentName').value.trim();
+            const email = document.getElementById('commentEmail').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+
+            if (!name || !email || !text) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            // Criar novo comentário
+            const commentsList = document.getElementById('commentsList');
+            const newComment = document.createElement('div');
+            newComment.className = 'glass-effect p-6 rounded-2xl';
+            
+            const initial = name.charAt(0).toUpperCase();
+            const colors = ['from-green-400 to-emerald-500', 'from-blue-400 to-teal-500', 'from-purple-400 to-pink-500', 'from-orange-400 to-red-500'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            newComment.innerHTML = `
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br ${randomColor} rounded-full flex items-center justify-center text-white font-bold">
+                        ${initial}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <h4 class="font-semibold text-white">${name}</h4>
+                            <span class="text-white/60 text-sm">• agora</span>
+                        </div>
+                        <p class="text-white/90">${text}</p>
+                    </div>
+                </div>
+            `;
+
+            // Adicionar no topo da lista
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+
+            // Limpar formulário
+            document.getElementById('commentName').value = '';
+            document.getElementById('commentEmail').value = '';
+            document.getElementById('commentText').value = '';
+
+            // Mostrar mensagem de sucesso
+            const button = document.querySelector('button[onclick="addComment()"]');
+            const originalText = button.textContent;
+            button.textContent = '✅ Comentário Publicado!';
+            button.style.background = 'linear-gradient(to right, #10b981, #059669)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
+
+        function handleImageUpload(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('projectGallery');
+            
+            // Limpar placeholders
+            gallery.innerHTML = '';
+            
+            Array.from(files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform';
+                        imageDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="Projeto ${index + 1}" class="w-full h-full object-cover" onclick="openImageModal('${e.target.result}')">
+                        `;
+                        gallery.appendChild(imageDiv);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Adicionar botão para mais imagens
+            const addMoreDiv = document.createElement('div');
+            addMoreDiv.className = 'aspect-square bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center cursor-pointer hover:scale-105 transition-transform';
+            addMoreDiv.innerHTML = `
+                <label for="moreImages" class="text-center text-white cursor-pointer">
+                    <div class="text-4xl mb-2">➕</div>
+                    <p class="text-sm">Adicionar mais</p>
+                </label>
+                <input type="file" id="moreImages" multiple accept="image/*" class="hidden" onchange="addMoreImages(event)">
+            `;
+            gallery.appendChild(addMoreDiv);
+        }
+
+        function addMoreImages(event) {
+            const files = event.target.files;
+            const gallery = document.getElementById('projectGallery');
+            const addButton = gallery.lastElementChild;
+            
+            Array.from(files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform';
+                        imageDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="Nova imagem ${index + 1}" class="w-full h-full object-cover" onclick="openImageModal('${e.target.result}')">
+                        `;
+                        gallery.insertBefore(imageDiv, addButton);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        function openImageModal(imageSrc) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="max-w-4xl max-h-full relative">
+                    <img src="${imageSrc}" alt="Imagem ampliada" class="max-w-full max-h-full object-contain rounded-2xl">
+                    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center">×</button>
+                </div>
+            `;
+            modal.onclick = function(e) {
+                if (e.target === modal) modal.remove();
+            };
+            document.body.appendChild(modal);
+        }
+
+        function showVolunteerForm() {
+            document.getElementById('volunteerModal').classList.remove('hidden');
+            document.getElementById('volunteerModal').classList.add('flex');
+        }
+
+        function showDonationInfo() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.getElementById('donationModal').classList.add('flex');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.getElementById(modalId).classList.remove('flex');
+        }
+
+
+    // Dados dos eventos amazônicos
         const eventData = {
             event1: {
                 title: "🌳 Reflorestamento Comunitário",
@@ -1987,4 +3048,3 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9805d0c851b3dd50',t:'MTc1ODA4Mjg3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
