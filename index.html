@@ -639,68 +639,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 4: Preservação dos Rios -->
-                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('rios')">
-                    <div class="h-48 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <div class="text-6xl mb-2">💧</div>
-                            <p class="text-sm opacity-80">Clique para ver galeria</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Preservação dos Rios</h3>
-                        <p class="text-gray-600 text-sm mb-4">Limpeza e monitoramento da qualidade da água</p>
-                        <div class="flex justify-between text-sm text-gray-500 mb-4">
-                            <span>📍 Rio Amazonas</span>
-                            <span>📅 2023 - Atual</span>
-                        </div>
-                        <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
-                            50km de Rio Limpo
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Projeto 5: Educação Ambiental -->
-                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('educacao')">
-                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <div class="text-6xl mb-2">📚</div>
-                            <p class="text-sm opacity-80">Clique para ver galeria</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Educação Ambiental</h3>
-                        <p class="text-gray-600 text-sm mb-4">Conscientização e formação de novos guardiões</p>
-                        <div class="flex justify-between text-sm text-gray-500 mb-4">
-                            <span>📍 Escolas Rurais</span>
-                            <span>📅 2022 - Atual</span>
-                        </div>
-                        <div class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
-                            1.200+ Crianças Impactadas
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projeto 6: Agricultura Sustentável -->
-                <div class="bg-white rounded-3xl overflow-hidden floating-card card-hover-effect cursor-pointer border border-green-100 shadow-lg hover:shadow-xl transition-all" onclick="openProjectPage('agricultura')">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-lime-500 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <div class="text-6xl mb-2">🌾</div>
-                            <p class="text-sm opacity-80">Clique para ver galeria</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Agricultura Sustentável</h3>
-                        <p class="text-gray-600 text-sm mb-4">Técnicas ecológicas para produção responsável</p>
-                        <div class="flex justify-between text-sm text-gray-500 mb-4">
-                            <span>📍 Cooperativas Locais</span>
-                            <span>📅 2021 - Atual</span>
-                        </div>
-                        <div class="bg-gradient-to-r from-green-600 to-lime-600 text-white text-center py-2 px-4 rounded-full text-sm font-semibold">
-                            300+ Produtores Capacitados
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -926,7 +865,7 @@
                 </div>
             </div>
         </div>
-        </div>
+
 
 
 <!--                                                                                         PROJECT PAGE 3                                                                                               -->
@@ -1039,10 +978,9 @@
                 </div>
             </div>
         </div>
-        </div>
 
 
-        <!-- Gallery Section -->
+            <!-- Gallery Section -->
         <section class="py-32 bg-gradient-to-br from-gray-50 to-green-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-20">
@@ -1126,7 +1064,8 @@
                 </div>
             </div>
         </section>
-    </div>
+        </div>
+
 
     <!-- EVENTOS PAGE -->
     <div id="eventosPage" class="page">
@@ -1266,7 +1205,8 @@
         </section>
     </div>
     </div>
-        
+
+
             <!-- Modal para Detalhes dos Eventos -->
     <div id="eventModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
         <div class="glass-effect rounded-3xl p-8 max-w-5xl mx-4 max-h-[90vh] overflow-y-auto">
@@ -3043,7 +2983,115 @@
             });
         });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  // Page Navigation System
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + 'Page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update navigation active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            document.querySelectorAll(`[data-page="${pageId}"]`).forEach(link => {
+                link.classList.add('active');
+            });
+            
+            // Close mobile menu
+            document.getElementById('mobileMenu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Gallery item click effect with enhanced animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Create ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255,255,255,0.6)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.left = '50%';
+                    ripple.style.top = '50%';
+                    ripple.style.width = '20px';
+                    ripple.style.height = '20px';
+                    ripple.style.marginLeft = '-10px';
+                    ripple.style.marginTop = '-10px';
+                    
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+
+        // Enhanced scroll effects
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const scrolled = window.scrollY > 50;
+            
+            if (scrolled) {
+                nav.style.background = 'rgba(255, 255, 255, 0.15)';
+                nav.style.backdropFilter = 'blur(25px)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.1)';
+                nav.style.backdropFilter = 'blur(20px)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOption = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observe = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.card-hover, .gallery-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Initialize with home page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
 
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9805d0c851b3dd50',t:'MTc1ODA4Mjg3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
