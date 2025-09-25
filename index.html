@@ -304,6 +304,48 @@
             animation: float 6s ease-in-out infinite;
         }
 
+
+        /* Estilo para a imagem em miniatura */
+        .miniatura {
+            width: 200px;
+            height: auto;
+            cursor: pointer; /* Indica que é clicável */
+            border: 2px solid #ccc;
+            transition: 0.3s;
+        }
+
+        .miniatura:hover {
+            opacity: 0.7;
+        }
+
+        /* ------------------------------------- */
+        /* Estilos do Modal (o fundo preto que aparece) */
+        /* ------------------------------------- */
+
+        #modal-container {
+            display: none; /* ESCONDIDO POR PADRÃO */
+            position: fixed; /* Fica fixo na tela */
+            z-index: 999; /* Fica acima de tudo */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Permite scroll se a imagem for muito grande */
+            background-color: rgba(0,0,0,0.9); /* Fundo preto semi-transparente */
+
+            /* Centralização do conteúdo */
+            display: flex; /* Usamos flex para centralizar */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Imagem dentro do Modal */
+        #imagem-modal {
+            margin: auto;
+            display: block;
+            max-width: 90%; /* Limita o tamanho da imagem na tela */
+            max-height: 90vh; /* Limita a altura da imagem (90% da altura da viewport) */
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -1101,7 +1143,7 @@
                         <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-2xl font-bold text-lg mb-2">
                             22 Set 2025
                         </div>
-                        <p class="text-gray-600">08:00 - 17:00</p>
+                        <p class="text-gray-600">10:00 - 13:15</p>
                     </div>
                     <button onclick="showEventDetails('event1')" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
                         Descobrir Mais
@@ -1219,15 +1261,21 @@
                 
                 <!-- Vídeo e Info Extra -->
                 <div>
-                    <h4 class="text-xl font-bold text-white mb-4">🎬 Vídeo Promocional</h4>
+                    <h4 class="text-xl font-bold text-white mb-4">🎬 Banner Promocional</h4>
                     <div class="glass-effect rounded-2xl overflow-hidden aspect-video flex items-center justify-center mb-6">
-                        <div class="text-center text-white p-8">
-                            <div class="text-6xl mb-4">🎥</div>
-                            <h5 class="text-xl font-bold mb-2">Experiência Imersiva</h5>
-                            <p class="text-white/70 mb-4">Descubra o impacto deste evento</p>
-                            <button class="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-full font-bold transition-all hover:shadow-lg">
-                                ▶️ Assistir Agora
-                            </button>
+                        <h2>Clique na imagem para expandir:</h2>
+
+                        <img
+                        class="miniatura"
+                        src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/banner.jpg?raw=true"
+                        data-full-src="https://github.com/MaxwilliamSena/filhosdaamazonia/blob/main/banner.jpg?raw=true"
+                        alt="Imagem de Exemplo"
+                        id="minhaImagem"
+                        >
+
+                        <div id="modal-container">
+                        <img id="imagem-modal">
+                        </div>
                         </div>
                     </div>
                     
@@ -2812,19 +2860,18 @@
                 title: "✂️ Resenha da Beleza",
                 info: [
                     "📅 <strong>Data:</strong> 22 de setembro 2025",
-                    "🕘 <strong>Horário:</strong> 08:00 às 17:00",
+                    "🕘 <strong>Horário:</strong> 10:00 às 13:15",
                     "📍 <strong>Local:</strong> R.Rio Araçatuba,10 , São Jose Operario II",
                     "👥 <strong>Voluntários:</strong> 50+ pessoas confirmadas",
                     "🎯 <strong>Missão:</strong> Divulgar a ong e fazer um evento sobre beleza para todas as comunidades"
                 ],
                 schedule: [
-                    "08:00 - Credenciamento",
-                    "08:30 - Briefing sobre técnicas de cortes",
-                    "09:00 - Inicio de palestras",
-                    "12:00 - Almoço comunitário",
-                    "14:00 - Continuação das palestras",
-                    "15:30 - Atividades educativas",
-                    "16:00 - Encerramento e celebração"
+                    "10:00 - Abertura Oficial",
+                    "10:15 - Ministração e musical Gospel",
+                    "10:40 - Tecnicas de corte feminino",
+                    "11:30 - Tecnicas de corte chanel classico",
+                    "12:15 - Intervalo para almoço",
+                    "13:15 - Noções de Biosegurança, Técnicas de esmaltação",
                 ],
                 extraInfo: [
                     "• Roupas confortáveis e calçados fechados obrigatórios",
@@ -3069,6 +3116,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             showPage('home');
         });
+
+
+        // 1. Pega os elementos do HTML
+        const modalContainer = document.getElementById('modal-container');
+        const imagemModal = document.getElementById('imagem-modal');
+        const miniatura = document.getElementById('minhaImagem');
+
+        // 2. FUNÇÃO PARA ABRIR O MODAL
+        miniatura.onclick = function() {
+            // Pega o URL da imagem maior (armazenado no atributo data-full-src)
+            imagemModal.src = this.getAttribute('data-full-src');
+            
+            // Exibe o modal (altera de display: none para display: flex)
+            modalContainer.style.display = "flex";
+        }
+
+        // 3. FUNÇÃO PARA FECHAR O MODAL (Clicando fora)
+        modalContainer.onclick = function(event) {
+            // Verifica se o clique foi *diretamente* no fundo preto (modalContainer)
+            // e não na imagem (imagemModal)
+            if (event.target === modalContainer) {
+                modalContainer.style.display = "none";
+            }
+        }
     </script>
 
     </script>
